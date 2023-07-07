@@ -364,28 +364,37 @@ switch(choice){
   {
   system("cls");
  
-        string syntax[9] = {
+        string syntax[13] = {
             "void function_name (void){ //statements }",
             "void function_name (dataType variable_name){ //statements }",
             "returnType function_name(void){ //statements }",
             "returnType function_name(dataType variable_name){ //statements }",
             "switch(expression){case value1: //statements break; ...}", 
             "if (condition) { //statements if true } else { //statements if false}",  
-            "for (initialization; condition; iteration){ //statements };", 
+            "for (initialization; condition; iteration){ //statements }", 
             "do { //statements } while (condition);",// easy pa nkalagay 
-            "while (condition) {// statements}" // oks na anyare
+            "while (condition) {// statements}",
+            "#define constant_name value",
+            "typedef existingType newName;",
+            "using newTypeName = existingType;",
+            "enum newType = {valueList};" // oks na anyare
         };                                // pag 2 pinipilii ko, easy pa rin nalabas- wai,t 
                                          //kahit napalitan na?
-        string syntaxWithErrors[9] = {
+        string syntaxWithErrors[13] = {
             "void variable_name (void) { //statements}",
             "void function_name (dataType value_name { //statements}",   
             "returnType function_name(void) { //statements}",//correct  
             "valueType function_name(dataType variable_name) { //statements}",  
             "switch(condition){case value1: //statements break; ...}", //guds na y
             "if (variable) { //statements if true } else if { //statements if false}",
-            "for (condition: initialization: iteration) { // Code to execute }", 
+            "for (condition: initialization: iteration) { // statements}", 
             "do { //statements } while (condition);",//correct
-            "while (initialization) {// statements}"
+            "while (initialization) {// statements}",
+            "#define constant_name value",
+            "typedef existingType newName;",
+            "using newTypeName = existingType;",
+            "enum newType = {valueList};"
+
         }; 
  
    int score = 0; //score variable
@@ -395,46 +404,42 @@ switch(choice){
       string random;
       srand(time(NULL));
 
-          int errorIndex = (rand() % 9);  //random number
+          int errorIndex = (rand() % 13);  //random number
           random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
         
-        gotoxy(70,6);
+        gotoxy(65,6);
           cout << "Mode: Medium" << endl;
-        gotoxy(72,7);{
+        gotoxy(67,7);{
           cout << "Test " << i << endl;
         }
-        gotoxy(57,9);{
+        gotoxy(50,9);{
           cout << "Identify if the syntax is RIGHT or WRONG:";
         }
 
  for(int i = 10; i<14;i++){
-                    gotoxy(53,i);{
+                    gotoxy(25,i);{
                     cout << "*";
                      }
                     }
   /*right side*/  for(int i = 10; i<15;i++){
-                    gotoxy(105,i);{
+                    gotoxy(120,i);{
                     cout << "*";
                       }
                     }
-   /*bottom side*/ for(int i = 53; i<105;i++){
+   /*bottom side*/ for(int i = 25; i<120;i++){
                     gotoxy(i,14);{
                     cout << "*";
                       }
                     }
-  /*top side*/     for(int i = 53; i<105;i++){
+  /*top side*/     for(int i = 25; i<120;i++){
                     gotoxy(i,10);{
                     cout << "*";
                       }
                    }
 
-        gotoxy(58,12);{ 
+        gotoxy(28,12);{ 
           cout << random;
         }
-
-
-
-
 
         string userAnswer;   
         string correctAnswer = syntax[errorIndex];
@@ -456,9 +461,9 @@ switch(choice){
                    }
 
               else {
-                gotoxy(53,18);
+                gotoxy(26,18);
                 cout<<"Your answer is incorrect. Please input the right syntax";
-                gotoxy(53,19);{
+                gotoxy(26,19);{
                 cout << "Your answer: ";
                 cin.ignore();
                 getline(cin,userAnswer);
@@ -486,10 +491,10 @@ switch(choice){
         }
         else if(userAnswer != correctAnswer)
         {
-            gotoxy(53,21);
+            gotoxy(26,21);
             cout << "Sorry, your answer is incorrect. ";
             
-            gotoxy(53,22);{
+            gotoxy(26,22);{
             cout << "The correct syntax is: ";
             cout << correctAnswer ;
             getch();
@@ -504,9 +509,9 @@ switch(choice){
    else if(choice1 == "no"||choice1 =="No"||choice1 =="NO") { //  else if(choice1 ==  "no"||"No"||"NO"){ 
     
     if(random != correctAnswer){
-             gotoxy(53,18);
+             gotoxy(26,18);
               cout<<"Please input the right syntax";
-              gotoxy(53,19);{
+              gotoxy(26,19);{
               cout << "Your answer: ";
               cin.ignore();
               getline(cin,userAnswer);
@@ -530,9 +535,9 @@ switch(choice){
                 }
                 else if(userAnswer != correctAnswer)
                 {
-                   gotoxy(53,21);
+                   gotoxy(26,21);
                     cout << "Sorry, your answer is incorrect."; 
-                   gotoxy(53,22);{
+                   gotoxy(26,22);{
                     cout << "The correct syntax is: ";
                     cout << correctAnswer ;
                     getch();
@@ -540,9 +545,9 @@ switch(choice){
             }
     }
     else if(random == correctAnswer){
-                 gotoxy(53,18);
+                 gotoxy(26,18);
                     cout << "Sorry, your answer is incorrect."; 
-                   gotoxy(53,19);{
+                   gotoxy(26,19);{
                     cout << "The correct syntax is: ";
                     cout << correctAnswer ;
                     getch();
@@ -556,7 +561,7 @@ switch(choice){
    }
     //score += score; 
     gotoxy(53,25);{ 
-    cout<<"Your score is: "<<score<<"/6"<<endl;
+    cout<<"Your score is: "<<score<<"/5"<<endl;
                      }
    }
    getch();
@@ -570,6 +575,196 @@ switch(choice){
     // gagi nawala yung case 2 natin, yung case 1 pala natin nawalaaa, yung eassy
     // 21
     //nasave ko naman sa github, copy passte ko n lng 
+
+  case 3:
+  {
+   system("cls");
+       string syntax[9] = {
+            "struct type_name{member_type member_name1; member_type member_name1;} object_name",
+            "union type_name{member_type member_name1, member_type member_name2} object_name"
+        };                                // pag 2 pinipilii ko, easy pa rin nalabas- wai,t 
+                                         //kahit napalitan na?
+        string syntaxWithErrors[9] = {
+            "struct type_name{dataType identifer1; dataType identifier2;} object_name",
+            "union type_name{member_type member_name1, member_type member_name2} object_name"
+        }; 
+ 
+   int score = 0; //score variable
+
+  for(int i = 1; i<=5; i++){
+      system("cls");
+      string random;
+      srand(time(NULL));
+
+          int errorIndex = (rand() % 9);  //random number
+          random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
+        
+        gotoxy(65,6);
+          cout << "Mode: Hard" << endl;
+        gotoxy(67,7);{
+          cout << "Test " << i << endl;
+        }
+        gotoxy(50,9);{
+          cout << "Identify if the syntax is RIGHT or WRONG:";
+        }
+
+ for(int i = 10; i<14;i++){
+                    gotoxy(25,i);{
+                    cout << "*";
+                     }
+                    }
+  /*right side*/  for(int i = 10; i<15;i++){
+                    gotoxy(120,i);{
+                    cout << "*";
+                      }
+                    }
+   /*bottom side*/ for(int i = 25; i<120;i++){
+                    gotoxy(i,14);{
+                    cout << "*";
+                      }
+                    }
+  /*top side*/     for(int i = 25; i<120;i++){
+                    gotoxy(i,10);{
+                    cout << "*";
+                      }
+                   }
+
+        gotoxy(28,12);{ 
+          cout << random;
+        }
+
+
+
+
+
+        string userAnswer;   
+        string correctAnswer = syntax[errorIndex];
+        string choice1;
+      
+      gotoxy(55,16);{
+        cout<<"Is the syntax is right? (Yes/No): ";
+        cin >> choice1;
+      }
+
+   if(choice1 == "yes"||choice1 =="Yes"||choice1 =="YES"){
+
+              
+              if (random == correctAnswer){
+                 gotoxy(53,18);
+                  cout << "Congratulations! Your answer is correct.";
+                  score++;
+                  getch();
+                   }
+
+              else {
+                gotoxy(26,18);
+                cout<<"Your answer is incorrect. Please input the right syntax";
+                gotoxy(26,19);{
+                cout << "Your answer: ";
+                cin.ignore();
+                getline(cin,userAnswer);
+                }
+                //cin.get(userAnswer,100);
+
+                // Remove whitespaces from userAnswer and correctAnswer
+                userAnswer.erase(remove_if(userAnswer.begin(), userAnswer.end(), [](unsigned char c) {
+                    return isspace(c);
+                }), userAnswer.end());
+
+                // correctAnswer.erase(remove_if(correctAnswer.begin(), correctAnswer.end(), [](unsigned char c) {
+                //     return isspace(c);
+                // }), correctAnswer.end());
+             correctAnswer.erase(remove_if(correctAnswer.begin(), correctAnswer.end(), [](unsigned char c) {
+                  return isspace(c);
+              }), correctAnswer.end());
+        if (userAnswer == correctAnswer)
+        {
+            gotoxy(53,21);{
+            cout << "Congratulations! Your answer is correct.";
+            score++;
+            getch();
+            }
+        }
+        else if(userAnswer != correctAnswer)
+        {
+            gotoxy(26,21);
+            cout << "Sorry, your answer is incorrect. ";
+            
+            gotoxy(26,22);{
+            cout << "The correct syntax is: ";
+            cout << correctAnswer ;
+            getch();
+            }
+    }
+   
+                    }
+                  
+   }
+  
+    // string userAnswer;
+   else if(choice1 == "no"||choice1 =="No"||choice1 =="NO") { //  else if(choice1 ==  "no"||"No"||"NO"){ 
+    
+    if(random != correctAnswer){
+             gotoxy(26,18);
+              cout<<"Please input the right syntax";
+              gotoxy(26,19);{
+              cout << "Your answer: ";
+              cin.ignore();
+              getline(cin,userAnswer);
+              }
+
+                    // Remove whitespaces from userAnswer and correctAnswer
+              userAnswer.erase(remove_if(userAnswer.begin(), userAnswer.end(), [](unsigned char c) {
+                  return isspace(c);
+              }), userAnswer.end());
+
+              correctAnswer.erase(remove_if(correctAnswer.begin(), correctAnswer.end(), [](unsigned char c) {
+                          return isspace(c);
+                      }), correctAnswer.end());
+                  if (userAnswer == correctAnswer)
+                {
+                    gotoxy(53,21);{
+                      cout << "Congratulations! Your answer is correct.";
+                      score++;
+                      getch();
+                    }
+                }
+                else if(userAnswer != correctAnswer)
+                {
+                   gotoxy(26,21);
+                    cout << "Sorry, your answer is incorrect."; 
+                   gotoxy(26,22);{
+                    cout << "The correct syntax is: ";
+                    cout << correctAnswer ;
+                    getch();
+                   }
+            }
+    }
+    else if(random == correctAnswer){
+                 gotoxy(26,18);
+                    cout << "Sorry, your answer is incorrect."; 
+                   gotoxy(26,19);{
+                    cout << "The correct syntax is: ";
+                    cout << correctAnswer ;
+                    getch();
+                   }
+    }
+  
+
+   
+ 
+ 
+   }
+    //score += score; 
+    gotoxy(53,25);{ 
+    cout<<"Your score is: "<<score<<"/5"<<endl;
+                     }
+   }
+
+    getch();
+    break;
+  }
+    //===============================================================================================================================
 } 
  getch();
     return 0;
