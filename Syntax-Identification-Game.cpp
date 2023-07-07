@@ -77,8 +77,7 @@ void Mechanics(char name[100]){
 
     //Tapping any button to continue
     gotoxy(62,17);{    
-      cout << "Tap any button to proceed in game....";
-    
+      cout << "Tap any button to proceed in game...."; 
      }
      getch();
 }
@@ -152,7 +151,7 @@ int main(){
 //start of switch
 switch(choice){
 
-  case 1:
+  case 1:    //1 for easy
   system("cls");
    srand(time(NULL));
 
@@ -194,7 +193,7 @@ switch(choice){
       system("cls");
       string random;
    
-          int errorIndex = (rand() % 13);  //random number
+          int errorIndex = 1+(rand() % 13);  //random number
           random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
         
         gotoxy(70,6);
