@@ -12,8 +12,7 @@
 #include <string>
 #include <sstream>
 using namespace std; 
-
-  int attempts = 3;           
+              
 
 //gotoxy function                  
 void gotoxy(int x, int y){
@@ -87,6 +86,7 @@ char name[100]; //variable for name of the user
 
 int main(){
  system("cls");
+ int attempts =3;
 
   
   /*left side*/  for(int i = 9; i<12;i++){
@@ -188,14 +188,14 @@ switch(choice){
         };
 
    int score = 0; //score variable
-
+   
   for(int i = 1; i<=6; i++){
-
       system("cls");
       string random;
    
           int errorIndex = 1+(rand() % 13);  //random number
           random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
+        
         gotoxy(70,6);
           cout << "Mode: Easy" << endl;
         gotoxy(72,7);{
@@ -254,7 +254,7 @@ switch(choice){
                    }
 
               else {
-                while(attempts > 0){
+                do{
                 gotoxy(53,18);
                 cout<<"Your answer is incorrect. Please input the right syntax";
                 gotoxy(53,19);{
@@ -275,7 +275,8 @@ switch(choice){
              correctAnswer.erase(remove_if(correctAnswer.begin(), correctAnswer.end(), [](unsigned char c) {
                   return isspace(c);
               }), correctAnswer.end());
-              }
+
+                
         if (userAnswer == correctAnswer)
         {
             gotoxy(53,21);{
@@ -284,29 +285,33 @@ switch(choice){
             getch();
             }
         }
-                
-        else if(userAnswer != correctAnswer || attempts == 0)
+        else if(userAnswer != correctAnswer)
         {
             gotoxy(53,21);
             cout << "Sorry, your answer is incorrect. ";
-            attempts--;
-            gotoxy(53,22);{
-            cout << "The correct syntax is: ";
-            cout << correctAnswer ;
-            getch();
-            }
-          
+            
+           --attempts;
     }
-                
-                    }
-
-   }       
    
+                    }while(attempts >0);
+
+                    
+                       gotoxy(53,22);{
+                     cout << "The correct syntax is: ";
+                       cout << correctAnswer ;
+                    getch();
+                     }
+                    
+
+              }           
+   }
   
     // string userAnswer;
    else if(choice1 == "no"||choice1 =="No"||choice1 =="NO") { //  else if(choice1 ==  "no"||"No"||"NO"){ 
     
     if(random != correctAnswer){
+      do{
+        system("cls");
              gotoxy(53,18);
               cout<<"Please input the right syntax";
               gotoxy(53,19);{
@@ -333,28 +338,36 @@ switch(choice){
                 }
                 else if(userAnswer != correctAnswer)
                 {
-                  attempts--;
+                  
                    gotoxy(53,21);
-                    cout << "Sorry, your answer is incorrect."; 
+                    cout << "Sorry, your answer is incorrect.";
+                    --attempts; 
+                  
+                    getch();
+                }
+                  }while(attempts >0);
+
                    gotoxy(53,22);{
                     cout << "The correct syntax is: ";
                     cout << correctAnswer ;
                     getch();
-                   }
             }
     }
-    else if(random == correctAnswer){
+    
+   /* else if(random == correctAnswer){
                  gotoxy(53,18);
                     cout << "Sorry, your answer is incorrect."; 
+
+
                    gotoxy(53,19);{
                     cout << "The correct syntax is: ";
                     cout << correctAnswer ;
                     getch();
                    }
-    }
+    }*/
   
 
-   }
+   
  
  
    }
@@ -362,8 +375,9 @@ switch(choice){
     gotoxy(53,25);{ 
     cout<<"Your score is: "<<score<<"/6"<<endl;
                      }
-  
-  
+   }
+
+   main();
    getch();
   break;
   }
@@ -734,8 +748,11 @@ switch(choice){
                 break;
                  }
               }
-             
-    
+      /*       
+    else if(choice1 != "no"||choice1 !="No"||choice1 !="NO" && choice1 != "yes"||choice1 !="Yes"||choice1 !="YES")
+    {
+      cout<<"invalid input";
+    }*/
    
 
                     // Remove whitespaces from userAnswer and correctAnswer

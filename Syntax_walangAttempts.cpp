@@ -12,8 +12,7 @@
 #include <string>
 #include <sstream>
 using namespace std; 
-
-  int attempts = 3;           
+              
 
 //gotoxy function                  
 void gotoxy(int x, int y){
@@ -190,12 +189,12 @@ switch(choice){
    int score = 0; //score variable
 
   for(int i = 1; i<=6; i++){
-
       system("cls");
       string random;
    
           int errorIndex = 1+(rand() % 13);  //random number
           random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
+        
         gotoxy(70,6);
           cout << "Mode: Easy" << endl;
         gotoxy(72,7);{
@@ -254,7 +253,6 @@ switch(choice){
                    }
 
               else {
-                while(attempts > 0){
                 gotoxy(53,18);
                 cout<<"Your answer is incorrect. Please input the right syntax";
                 gotoxy(53,19);{
@@ -275,7 +273,6 @@ switch(choice){
              correctAnswer.erase(remove_if(correctAnswer.begin(), correctAnswer.end(), [](unsigned char c) {
                   return isspace(c);
               }), correctAnswer.end());
-              }
         if (userAnswer == correctAnswer)
         {
             gotoxy(53,21);{
@@ -284,24 +281,21 @@ switch(choice){
             getch();
             }
         }
-                
-        else if(userAnswer != correctAnswer || attempts == 0)
+        else if(userAnswer != correctAnswer)
         {
             gotoxy(53,21);
             cout << "Sorry, your answer is incorrect. ";
-            attempts--;
+            
             gotoxy(53,22);{
             cout << "The correct syntax is: ";
             cout << correctAnswer ;
             getch();
             }
-          
     }
-                
-                    }
-
-   }       
    
+                    }
+                  
+   }
   
     // string userAnswer;
    else if(choice1 == "no"||choice1 =="No"||choice1 =="NO") { //  else if(choice1 ==  "no"||"No"||"NO"){ 
@@ -333,7 +327,6 @@ switch(choice){
                 }
                 else if(userAnswer != correctAnswer)
                 {
-                  attempts--;
                    gotoxy(53,21);
                     cout << "Sorry, your answer is incorrect."; 
                    gotoxy(53,22);{
@@ -354,7 +347,7 @@ switch(choice){
     }
   
 
-   }
+   
  
  
    }
@@ -362,8 +355,7 @@ switch(choice){
     gotoxy(53,25);{ 
     cout<<"Your score is: "<<score<<"/6"<<endl;
                      }
-  
-  
+   }
    getch();
   break;
   }
