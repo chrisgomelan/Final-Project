@@ -261,9 +261,10 @@ if (choice1 == "yes") {
             gotoxy(53, 19);
             cout << "Your answer:";
            
-            gotoxy(65, 19);
-            cout <<"                                                                                       "; // Clear previous input
-
+          //  gotoxy(65, 19);
+            //cout <<"                                                                                       "; // Clear previous input
+            
+            userAnswer =  ""; 
             gotoxy(65, 19);
             cin.ignore(); 
             getline(cin, userAnswer);
@@ -307,8 +308,8 @@ if (choice1 == "yes") {
        
 } else if (choice1 == "no") {
     if (random != correctAnswer) {
-      //  int attempts = 0;
-        //bool correct = false; // Track if the user enters the correct syntax
+       int attempts = 0;
+      bool correct = false; // Track if the user enters the correct syntax
 
         while (attempts < 3) {
             attempts++;
@@ -532,8 +533,8 @@ if (choice1 == "yes") {
        
 } else if (choice1 == "no") {
     if (random != correctAnswer) {
-      //  int attempts = 0;
-        //bool correct = false; // Track if the user enters the correct syntax
+        int attempts = 0;
+      bool correct = false; // Track if the user enters the correct syntax
 
         while (attempts < 3) {
             attempts++;
@@ -745,8 +746,8 @@ if (choice1 == "yes") {
        
 } else if (choice1 == "no") {
     if (random != correctAnswer) {
-      //  int attempts = 0;
-        //bool correct = false; // Track if the user enters the correct syntax
+       int attempts = 0;
+        bool correct = false; // Track if the user enters the correct syntax
 
         while (attempts < 3) {
             attempts++;
