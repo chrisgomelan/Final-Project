@@ -136,26 +136,44 @@ int main(){
     
  
    bool playAgain = true; // INDICATOR whether to play again or not
-
+ bool validChoice = false;
   while (playAgain)
 
     {
     // Difficulty Levels Menu
+   int choice = 0; // variable for choice of user's difficulty level
+while (true) {
     system("cls");
-    int choice; // variable for choice of user's difficulty level
-    gotoxy(62,8);
-    cout << "Select difficulty levels: "; 
+    gotoxy(62, 8);
+    cout << "Select difficulty levels: ";
 
-    gotoxy(64,10); cout<<"1 - Easy";
-    gotoxy(64,11); cout<<"2 - Medium";
-    gotoxy(64,12); cout<<"3 - Hard";
+    gotoxy(64, 10);
+    cout << "1 - Easy";
+    gotoxy(64, 11);
+    cout << "2 - Medium";
+    gotoxy(64, 12);
+    cout << "3 - Hard";
 
-  gotoxy(62,14); cout << "Enter you choice: ";
-  cin>>choice;          
+    gotoxy(62, 14);
+    cout << "Enter your choice: ";
+    cin >> choice;
 
-  //getch();
+    if (choice >= 1 && choice <= 3) {
+        break; // Exit the loop if the choice is valid
+    } else {
+        gotoxy(62, 16);
+        cout << "Invalid input. Please try again.";
+        Sleep(2000); // Sleep for 2 seconds
+                // Clear input buffer
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    }
+}
+
 
 //start of switch
+ 
 switch(choice){ 
 case 1: {
     system("cls");
@@ -199,7 +217,7 @@ case 1: {
         system("cls");
         string random;
 
-        int errorIndex = 1 + (rand() % 13);  //random number
+        int errorIndex = (rand() % 13);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
 
         gotoxy(70, 6);
@@ -235,10 +253,26 @@ case 1: {
 
         gotoxy(55, 16);
         cout << "Is the syntax right? (Yes/No): ";
-        cin >> choice1;
+        while (true) {
+            cin >> choice1;
 
-        // Convert the input to lowercase for case-insensitive comparison
-        transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+            // Convert the input to lowercase for case-insensitive comparison
+            transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+
+            if (choice1 == "yes" || choice1 == "no") {
+                break;
+            } else {
+                gotoxy(53, 18);
+                cout << "Invalid input! Please enter either 'Yes' or 'No'.";
+                getch();
+                gotoxy(53, 16);
+                cout << string(30, ' '); // Clear previous input
+                gotoxy(53, 18);
+                cout << string(60, ' '); // Clear previous message
+                gotoxy(55, 16);
+                cout << "Is the syntax right? (Yes/No): ";
+            }
+        }
 
         if (choice1 == "yes") {
             if (random == correctAnswer) {
@@ -418,7 +452,7 @@ case 1: {
         system("cls");
         string random;
 
-        int errorIndex = 1 + (rand() % 13);  //random number
+        int errorIndex = (rand() % 13);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
 
         gotoxy(70, 6);
@@ -454,10 +488,26 @@ case 1: {
 
         gotoxy(55, 16);
         cout << "Is the syntax right? (Yes/No): ";
-        cin >> choice1;
+       while (true) {
+            cin >> choice1;
 
-        // Convert the input to lowercase for case-insensitive comparison
-        transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+            // Convert the input to lowercase for case-insensitive comparison
+            transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+
+            if (choice1 == "yes" || choice1 == "no") {
+                break;
+            } else {
+                gotoxy(53, 18);
+                cout << "Invalid input! Please enter either 'Yes' or 'No'.";
+                getch();
+                gotoxy(53, 16);
+                cout << string(30, ' '); // Clear previous input
+                gotoxy(53, 18);
+                cout << string(60, ' '); // Clear previous message
+                gotoxy(55, 16);
+                cout << "Is the syntax right? (Yes/No): ";
+            }
+        }
 
 if (choice1 == "yes") {
     if (random == correctAnswer) {
@@ -611,19 +661,19 @@ if (choice1 == "yes") {
   {
    system("cls");
        string syntax[4] = {
-            "struct type_name{member_type member_name1; member_type member_name1;} object_name;",
-            "union type_name{member_type member_name1, member_type member_name2} object_name;",
-            "fstream fstream_name; fstream_name.open( ""file_name.txt"", mode_Flag); //statement    fstream_name.close();",
-            "class class_name{ specifier: // Class members and methods } object_name;"
-            
-        };                                // pag 2 pinipilii ko, easy pa rin nalabas- wai,t 
-                                         //kahit napalitan na?
-        string syntaxWithErrors[4] = {
-            "struct type_name{dataType identifer1; dataType identifier2;} object_name",
-            "union type_name{member_type member_name1, member_type member_name2} object_name",
-            "fstream fstream_name;  fstream_name.open( ""file_name.txt"", mode_Flag);  //statement  fstream_name.close();",
-            "class class_name{ specifier: // Class members and methods } object_name;"
-        }; 
+    "struct type_name{dataType identifer1; dataType identifier2;} object_name;",
+    "union type_name{member_type member_name1, member_type member_name2} object_name;",
+    "fstream fstream_name; fstream_name.open( \"file_name.txt\", mode_Flag); //statement   fstream_name.close();",
+    "class class_name{ specifier: // Class members and methods } object_name;"
+    };
+
+    string syntaxWithErrors[4] = {
+    "struct type_name{dataType identifer1; dataType identifier2;} object_name",
+    "union type_name{member_type member_name1, member_type member_name2} object_name",
+    "fstream fstream_name; fstream_name.open( \"file_name.txt\", mode_Flag); //statement   fstream_name.close();",
+    "class class_name{ specifier: // Class members and methods } object_name;"
+    };
+
  
    int score = 0; //score variable
 
@@ -631,7 +681,7 @@ if (choice1 == "yes") {
         system("cls");
         string random;
 
-        int errorIndex = 1 + (rand() % 13);  //random number
+        int errorIndex = (rand() % 4);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
 
         gotoxy(70, 6);
@@ -667,10 +717,26 @@ if (choice1 == "yes") {
 
         gotoxy(55, 16);
         cout << "Is the syntax right? (Yes/No): ";
-        cin >> choice1;
+        while (true) {
+            cin >> choice1;
 
-        // Convert the input to lowercase for case-insensitive comparison
-        transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+            // Convert the input to lowercase for case-insensitive comparison
+            transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+
+            if (choice1 == "yes" || choice1 == "no") {
+                break;
+            } else {
+                gotoxy(53, 18);
+                cout << "Invalid input! Please enter either 'Yes' or 'No'.";
+                getch();
+                gotoxy(53, 16);
+                cout << string(30, ' '); // Clear previous input
+                gotoxy(53, 18);
+                cout << string(60, ' '); // Clear previous message
+                gotoxy(55, 16);
+                cout << "Is the syntax right? (Yes/No): ";
+            }
+        }
 
 if (choice1 == "yes") {
     if (random == correctAnswer) {
@@ -815,6 +881,7 @@ if (choice1 == "yes") {
             cout << "Invalid choice! Please select a valid difficulty level.";
             continue;
         }
+
 //==============================================================================================================================
 
 // PLAYAGAIN
@@ -833,7 +900,8 @@ if (choice1 == "yes") {
             cout<<"Thank you for playing!";
             playAgain = false;  // end the program
         }
-    }
+        
+    }  
         getch();
     return 0;
 }
