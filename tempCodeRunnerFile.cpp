@@ -1,2 +1,2 @@
-   gotoxy(65,16);
-            cout<<"Thank you for playing!";
+gotoxy(55, 16);
+                // cout << "Is the syntax right? (Yes/No): ";
