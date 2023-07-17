@@ -86,40 +86,16 @@ char name[100]; //variable for name of the user
 
 int main(){
  system("cls");
-
-  
-  /*left side*/  for(int i = 9; i<12;i++){
-                    gotoxy(57,i);{
-                    cout << "*";
-                     }
-                    }
-  /*right side*/  for(int i = 9; i<12;i++){
-                    gotoxy(92,i);{
-                    cout << "*";
-                      }
-                    }
-   /*bottom side*/ for(int i = 57; i<93;i++){
-                    gotoxy(i,12);{
-                    cout << "*";
-                      }
-                    }
-  /*top side*/     for(int i = 57; i<93;i++){
-                    gotoxy(i,8);{
-                    cout << "*";
-                      }
-                   }
+ system("Color F0"); 
  
 
 //This section is for Welcoming and Prompting user to input his/her name
 
-    gotoxy(68,9);{
-    system("Color F0"); //Color: F means Bright White background and 0 means black text; this is from windows.h library
-    cout << "Welcome to";
+
+    gotoxy(53,19);{
+      cout << "Welcome to Syntax Identification Game!";
     }
-    gotoxy(62,10);{
-      cout << "Syntax Identification Game!";
-    }
-    gotoxy(58, 15);{
+    gotoxy(55, 20);{
       cout << "Enter your name: ";
     }
 

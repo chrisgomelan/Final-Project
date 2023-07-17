@@ -14,6 +14,40 @@
 using namespace std; 
               
 
+void printAscii(){
+        string asciiArt = R"(
+                                      /$$$$$$  /$$     /$$ /$$   /$$ /$$$$$$$$ /$$$$$$  /$$   /$$                                   
+                                     /$$__  $$|  $$   /$$/| $$$ | $$|__  $$__//$$__  $$| $$  / $$                                   
+                                    | $$  \__/ \  $$ /$$/ | $$$$| $$   | $$  | $$  \ $$|  $$/ $$/                                   
+                                    |  $$$$$$   \  $$$$/  | $$ $$ $$   | $$  | $$$$$$$$ \  $$$$/                                    
+                                     \____  $$   \  $$/   | $$  $$$$   | $$  | $$__  $$  >$$  $$                                    
+                                     /$$  \ $$    | $$    | $$\  $$$   | $$  | $$  | $$ /$$/\  $$                                   
+                                    |  $$$$$$/    | $$    | $$ \  $$   | $$  | $$  | $$| $$  \ $$                                   
+                                     \______/     |__/    |__/  \__/   |__/  |__/  |__/|__/  |__/                                   
+ /$$$$$$ /$$$$$$$  /$$$$$$$$ /$$   /$$ /$$$$$$$$ /$$$$$$ /$$$$$$$$ /$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$
+|_  $$_/| $$__  $$| $$_____/| $$$ | $$|__  $$__/|_  $$_/| $$_____/|_  $$_/ /$$__  $$ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$
+  | $$  | $$  \ $$| $$      | $$$$| $$   | $$     | $$  | $$        | $$  | $$  \__/| $$  \ $$   | $$     | $$  | $$  \ $$| $$$$| $$
+  | $$  | $$  | $$| $$$$$   | $$ $$ $$   | $$     | $$  | $$$$$     | $$  | $$      | $$$$$$$$   | $$     | $$  | $$  | $$| $$ $$ $$
+  | $$  | $$  | $$| $$__/   | $$  $$$$   | $$     | $$  | $$__/     | $$  | $$      | $$__  $$   | $$     | $$  | $$  | $$| $$  $$$$
+  | $$  | $$  | $$| $$      | $$\  $$$   | $$     | $$  | $$        | $$  | $$    $$| $$  | $$   | $$     | $$  | $$  | $$| $$\  $$$
+ /$$$$$$| $$$$$$$/| $$$$$$$$| $$ \  $$   | $$    /$$$$$$| $$       /$$$$$$|  $$$$$$/| $$  | $$   | $$    /$$$$$$|  $$$$$$/| $$ \  $$
+|______/|_______/ |________/|__/  \__/   |__/   |______/|__/      |______/ \______/ |__/  |__/   |__/   |______/ \______/ |__/  \__/
+                                            /$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$                                               
+                                           /$$__  $$ /$$__  $$| $$$    /$$$| $$_____/                                               
+                                          | $$  \__/| $$  \ $$| $$$$  /$$$$| $$                                                     
+                                          | $$ /$$$$| $$$$$$$$| $$ $$/$$ $$| $$$$$                                                  
+                                          | $$|_  $$| $$__  $$| $$  $$$| $$| $$__/                                                  
+                                          | $$  \ $$| $$  | $$| $$\  $ | $$| $$                                                     
+                                          |  $$$$$$/| $$  | $$| $$ \/  | $$| $$$$$$$$                                               
+                                           \______/ |__/  |__/|__/     |__/|________/                                               
+                                                                                                                                    
+                                                                                                                                    
+                                                                                                                                                          
+                                                                                                                                          
+                                                                                                                                                            
+                                                                                                                                                             )";
+cout << asciiArt << endl;
+}
 //gotoxy function                  
 void gotoxy(int x, int y){
     COORD coord;
@@ -85,44 +119,43 @@ void Mechanics(char name[100]){
 char name[100]; //variable for name of the user
 
 int main(){
- system("cls");
-
+system("cls");
+    system("Color F0");
   int attempts = 0;
   bool correct = false; 
 
   
-  /*left side*/  for(int i = 9; i<12;i++){
-                    gotoxy(57,i);{
-                    cout << "*";
-                     }
-                    }
-  /*right side*/  for(int i = 9; i<12;i++){
-                    gotoxy(92,i);{
-                    cout << "*";
-                      }
-                    }
-   /*bottom side*/ for(int i = 57; i<93;i++){
-                    gotoxy(i,12);{
-                    cout << "*";
-                      }
-                    }
-  /*top side*/     for(int i = 57; i<93;i++){
-                    gotoxy(i,8);{
-                    cout << "*";
-                      }
-                   }
+//   /*left side*/  for(int i = 9; i<12;i++){
+//                     gotoxy(57,i);{
+//                     cout << "*";
+//                      }
+//                     }
+//   /*right side*/  for(int i = 9; i<12;i++){
+//                     gotoxy(92,i);{
+//                     cout << "*";
+//                       }
+//                     }
+//    /*bottom side*/ for(int i = 57; i<93;i++){
+//                     gotoxy(i,12);{
+//                     cout << "*";
+//                       }
+//                     }
+//   /*top side*/     for(int i = 57; i<93;i++){
+//                     gotoxy(i,8);{
+//                     cout << "*";
+//                       }
+//                    }
  
 
 //This section is for Welcoming and Prompting user to input his/her name
 
-    gotoxy(68,9);{
-    system("Color F0"); //Color: F means Bright White background and 0 means black text; this is from windows.h library
-    cout << "Welcome to";
+    // ASCII art as a string
+  
+ printAscii();
+    gotoxy(1,26);{
+      cout << "Welcome to the Syntax Identification Game!";
     }
-    gotoxy(62,10);{
-      cout << "Syntax Identification Game!";
-    }
-    gotoxy(58, 15);{
+    gotoxy(1, 27);{
       cout << "Enter your name: ";
     }
 
@@ -136,7 +169,7 @@ int main(){
     
  
    bool playAgain = true; // INDICATOR whether to play again or not
- bool validChoice = false;
+   bool validChoice = false;
   while (playAgain)
 
     {
@@ -164,11 +197,13 @@ while (true) {
         gotoxy(62, 16);
         cout << "Invalid input. Please try again.";
         Sleep(2000); // Sleep for 2 seconds
-                // Clear input buffer
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-    }
+               
+    
+       cin.clear();    // Clear input buffer
+       cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+            }
 }
 
 
@@ -259,7 +294,7 @@ case 1: {
             // Convert the input to lowercase for case-insensitive comparison
             transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
 
-            if (choice1 == "yes" || choice1 == "no") {
+            if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes" || choice1 == "no" || choice1 == "NO" || choice1 == "No") {
                 break;
             } else {
                 gotoxy(53, 18);
@@ -271,13 +306,15 @@ case 1: {
                 cout << string(60, ' '); // Clear previous message
                 
                 gotoxy(55, 16);
-                cout << "Is the syntax right? (Yes/No): ";
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                 cout << "Is the syntax right? (Yes/No): ";
+                cin.clear();   // Clear any error flags that may be set on the input
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
             }
         }
 
-        if (choice1 == "yes") {
+        if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
                 gotoxy(53, 18);
                 cout << "Congratulations! Your answer is correct.";
@@ -336,7 +373,7 @@ case 1: {
                     getch();
                 }
             }
-        } else if (choice1 == "no") {
+        } else if (choice1 == "no" || choice1 == "NO" || choice1 == "No") {
             if (random != correctAnswer) {
                 int attempts = 0;
                 bool correct = false; // Track if the user enters the correct syntax
@@ -496,7 +533,7 @@ case 1: {
             // Convert the input to lowercase for case-insensitive comparison
             transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
 
-            if (choice1 == "yes" || choice1 == "no") {
+            if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes" || choice1 == "no" || choice1 == "NO" || choice1 == "No") {
                 break;
             } else {
                 gotoxy(53, 18);
@@ -509,12 +546,15 @@ case 1: {
                 
                 gotoxy(55, 16);
                 cout << "Is the syntax right? (Yes/No): ";
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin.clear();   // Clear any error flags that may be set on the input
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
             }
+        
         }
 
-        if (choice1 == "yes") {
+        if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
                 gotoxy(53, 18);
                 cout << "Congratulations! Your answer is correct.";
@@ -527,15 +567,15 @@ case 1: {
                 while (attempts < 3) {
                     attempts++;
 
-                    gotoxy(53, 18);
+                    gotoxy(47, 18);
                     cout << "Your answer is incorrect. Please input the right syntax.";
-                    gotoxy(53, 19);
+                    gotoxy(47, 19);
                     cout << "Your answer: ";
 
-                    gotoxy(65, 19);
-                    cout << string(80, ' '); // Clear previous input
+                    gotoxy(59, 19);
+                    cout << string(120, ' '); // Clear previous input
 
-                    gotoxy(65, 19);
+                    gotoxy(59, 19);
                     cin.ignore();
                     getline(cin, userAnswer);
 
@@ -573,22 +613,22 @@ case 1: {
                     getch();
                 }
             }
-        } else if (choice1 == "no") {
+        } else if (choice1 == "no" || choice1 == "NO" || choice1 == "No") {
             if (random != correctAnswer) {
                 int attempts = 0;
                 bool correct = false; // Track if the user enters the correct syntax
 
                 while (attempts < 3) {
                     attempts++;
-                    gotoxy(53, 18);
+                    gotoxy(47, 18);
                     cout << "Please input the right syntax.";
-                    gotoxy(53, 19);
+                    gotoxy(47, 19);
                     cout << "Your answer: ";
 
-                    gotoxy(65, 19);
-                    cout << string(80, ' '); // Clear previous input
+                    gotoxy(59, 19);
+                    cout << string(120, ' '); // Clear previous input
 
-                    gotoxy(65, 19);
+                    gotoxy(59, 19);
                     cin.ignore();
                     getline(cin, userAnswer);
 
@@ -641,7 +681,7 @@ case 1: {
     }
 
     gotoxy(53, 25);
-    cout << "Your score is: " << score << "/6" << endl;
+    cout << "Your score is: " << score << "/5" << endl;
 
     getch();
     break;
@@ -651,28 +691,33 @@ case 1: {
   case 3:
   {
    system("cls");
-       string syntax[4] = {
-    "struct type_name{dataType identifer1; dataType identifier2;} object_name;",
+       string syntax[6] = {
+    "struct type_name{dataType identifier1; dataType identifier2;} object_name;",
     "union type_name{member_type member_name1, member_type member_name2} object_name;",
-    "fstream fstream_name; fstream_name.open( \"file_name.txt\", mode_Flag); //statement  fstream_name.close();",
-    "class class_name{ specifier: // Class members and methods } object_name;"
+    "fstream fstream_name; fstream_name.open( \"file_name.txt\", mode_flag); //statement  fstream_name.close();",
+    "class class_name{ specifier: // Class members and methods } object_name;",
+    "while(condition) { while(condition){ //statement of inside loop } //statement of outerloop }",
+    "do{ do{ //statement of inside loop } while(condition); //statement of outerloop } while (condition)"
+
     };
 
-    string syntaxWithErrors[4] = {
-    "struct type_name{dataType identifer1; dataType identifier2;} object_name",
+    string syntaxWithErrors[6] = {
+    "struct type_name(dataType identifier1; dataType identifier2;) object_name;",
     "union type_name{member_type member_name1, member_type member_name2} object_name",
-    "fstream fstream_name; fstream_name.open( \"file_name.txt\", mode_Flag); //statement  fstream_name.close();",
-    "class class_name{ specifier: // Class members and methods } object_name;"
+    "fstream fstream_name; fstream_name.open[ \"file_name.txt\", mode_flag]; //statement  fstream_name.close();",
+    "class class_name{ specifier: // Class members and methods } object_name;", //correct
+    "while(condition) { while(expression){ //statement of inside loop } //statement of outerloop }",
+    "do{ do{ //statement of inside loop } while(condition); //statement of outerloop } while (condition)" //correct
     };
 
  
    int score = 0; //score variable
 
- for (int i = 1; i <= 4; i++) {
+ for (int i = 1; i <= 5; i++) {
         system("cls");
         string random;
 
-        int errorIndex = (rand() % 4);  //random number
+        int errorIndex = (rand() % 6);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
 
         gotoxy(70, 6);
@@ -714,7 +759,7 @@ case 1: {
             // Convert the input to lowercase for case-insensitive comparison
             transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
 
-            if (choice1 == "yes" || choice1 == "no") {
+            if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes" || choice1 == "no" || choice1 == "NO" || choice1 == "No") {
                 break;
             } else {
                 gotoxy(53, 18);
@@ -727,12 +772,14 @@ case 1: {
                 
                 gotoxy(55, 16);
                 cout << "Is the syntax right? (Yes/No): ";
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin.clear();   // Clear any error flags that may be set on the input
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
             }
         }
 
-        if (choice1 == "yes") {
+        if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
                 gotoxy(53, 18);
                 cout << "Congratulations! Your answer is correct.";
@@ -745,15 +792,15 @@ case 1: {
                 while (attempts < 3) {
                     attempts++;
 
-                    gotoxy(40, 18);
+                    gotoxy(20, 18);
                     cout << "Your answer is incorrect. Please input the right syntax.";
-                    gotoxy(40, 19);
+                    gotoxy(20, 19);
                     cout << "Your answer: ";
 
-                    gotoxy(52, 19);
-                    cout << string(150, ' '); // Clear previous input
+                    gotoxy(32, 19);
+                    cout << string(200, ' '); // Clear previous input
 
-                    gotoxy(52, 19);
+                    gotoxy(32, 19);
                     cin.ignore();
                     getline(cin, userAnswer);
 
@@ -791,22 +838,22 @@ case 1: {
                     getch();
                 }
             }
-        } else if (choice1 == "no") {
+        } else if (choice1 == "no" || choice1 == "NO" || choice1 == "No") {
             if (random != correctAnswer) {
                 int attempts = 0;
                 bool correct = false; // Track if the user enters the correct syntax
 
                 while (attempts < 3) {
                     attempts++;
-                    gotoxy(40, 18);
+                    gotoxy(20, 18);
                     cout << "Please input the right syntax.";
-                    gotoxy(35, 19);
+                    gotoxy(20, 19);
                     cout << "Your answer: ";
 
-                    gotoxy(47, 19);
-                    cout << string(150, ' '); // Clear previous input
+                    gotoxy(32, 19);
+                    cout << string(200, ' '); // Clear previous input
 
-                    gotoxy(47, 19);
+                    gotoxy(32, 19);
                     cin.ignore();
                     getline(cin, userAnswer);
 
@@ -881,7 +928,7 @@ case 1: {
 
         if (playAgainChoice == 'Y' || playAgainChoice == 'y') {
 
-            continue;  // go back to the beginning of the while loop (main menu asdfghjkl)
+            continue;  // go back to the beginning of the while loop (main menu)
         } else {
           system("cls");
           gotoxy(65,16);
@@ -893,3 +940,4 @@ case 1: {
         getch();
     return 0;
 }
+
