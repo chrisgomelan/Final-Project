@@ -46,10 +46,10 @@ cout << asciiArt << endl;
 
 void mechanicsTitle() {
     string asciiArt = R"(
-   __  ______________ _____   _  _______________
-  /  |/  / __/ ___/ // / _ | / |/ /  _/ ___/ __/
- / /|_/ / _// /__/ _  / __ |/    // // /___\ \
-/_/  /_/___/\___/_//_/_/ |_/_/|_/___/\___/___/
+                                                               __  ______________ _____   _  _______________
+                                                              /  |/  / __/ ___/ // / _ | / |/ /  _/ ___/ __/
+                                                             / /|_/ / _// /__/ _  / __ |/    // // /___\ \
+                                                            /_/  /_/___/\___/_//_/_/ |_/_/|_/___/\___/___/
     )";
     cout << asciiArt << endl;
 }
@@ -263,7 +263,7 @@ case 1: {
         "cin<<variable;",
         "dataType variableName == value;",
         "const type name = value;", // correct
-        "// comment //",
+        ".. comment",
         "/ comment /",
         "dataType arraySize [arrayName];",
         "dataType arrayName [columnSize][rowSize];",
@@ -361,7 +361,7 @@ case 1: {
                     cout << "Your answer: ";
 
                     gotoxy(65, 19);
-                    cout << string(80, ' '); // Clear previous input
+                    cout << string(120, ' '); // Clear previous input
 
                     gotoxy(65, 19);
                     cin.ignore();
@@ -568,9 +568,9 @@ case 1: {
                 cout << "Invalid input! Please enter either 'Yes' or 'No'.";
                 getch();
                 gotoxy(53, 16);
-                cout << string(30, ' '); // Clear previous input
+                cout << string(120, ' '); // Clear previous input
                 gotoxy(53, 18);
-                cout << string(60, ' '); // Clear previous message
+                cout << string(120, ' '); // Clear previous message
                 
                 gotoxy(55, 16);
                 cout << "Is the syntax right? (Yes/No): ";
@@ -794,9 +794,9 @@ case 1: {
                 cout << "Invalid input! Please enter either 'Yes' or 'No'.";
                 getch();
                 gotoxy(53, 16);
-                cout << string(30, ' '); // Clear previous input
+                cout << string(120, ' '); // Clear previous input
                 gotoxy(53, 18);
-                cout << string(60, ' '); // Clear previous message
+                cout << string(120, ' '); // Clear previous message
                 
                 gotoxy(55, 16);
                 cout << "Is the syntax right? (Yes/No): ";
