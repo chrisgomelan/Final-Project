@@ -44,19 +44,18 @@ void printAscii(){
 cout << asciiArt << endl;
 }
 
-void mechanicsTitle(void){
-    string asciiArt = R"(      
-                                                    __    __   ______   ______   __  __   ______   __   __   __   ______   ______    
-                                                   /\ "-./  \ /\  ___\ /\  ___\ /\ \_\ \ /\  __ \ /\ "-.\ \ /\ \ /\  ___\ /\  ___\   
-                                                   \ \ \-./\ \\ \  __\ \ \ \____\ \  __ \\ \  __ \\ \ \-.  \\ \ \\ \ \____\ \___  \  
-                                                    \ \_\ \ \_\\ \_____\\ \_____\\ \_\ \_\\ \_\ \_\\ \_\\"\_\\ \_\\ \_____\\/\_____\ 
-                                                     \/_/  \/_/ \/_____/ \/_____/ \/_/\/_/ \/_/\/_/ \/_/ \/_/ \/_/ \/_____/ \/_____/ 
-                                                                                  
-                    )";
-        cout << asciiArt << endl;
+void mechanicsTitle() {
+    string asciiArt = R"(
+   __  ______________ _____   _  _______________
+  /  |/  / __/ ___/ // / _ | / |/ /  _/ ___/ __/
+ / /|_/ / _// /__/ _  / __ |/    // // /___\ \
+/_/  /_/___/\___/_//_/_/ |_/_/|_/___/\___/___/
+    )";
+    cout << asciiArt << endl;
 }
 
-void thanks(void){
+
+void thanks(){
      string asciiArt = R"(    
                         ::::::'########:'##::::'##::::'###::::'##::: ##:'##:::'##::::'##:::'##::'#######::'##::::'##:                    
                         ::::::... ##..:: ##:::: ##:::'## ##::: ###:: ##: ##::'##:::::. ##:'##::'##.... ##: ##:::: ##:                    
@@ -180,7 +179,6 @@ system("cls");
 //This section is for Welcoming and Prompting user to input his/her name
 
     // ASCII art as a string
-  
  printAscii();
     gotoxy(15,30);{
       cout << "Welcome to the Syntax Identification Game!";
@@ -936,7 +934,7 @@ case 1: {
     }
 
     gotoxy(53, 25);
-    cout << "Your score is: " << score << "/6" << endl;
+    cout << "Your score is: " << score << "/5" << endl;
 
     getch();
     break;
