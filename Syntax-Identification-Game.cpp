@@ -354,23 +354,18 @@ case 1: {
 
                 while (attempts < 3) {
                     attempts++;
-                    
+
                     gotoxy(53, 18);
                     cout << "Your answer is incorrect. Please input the right syntax.";
                     gotoxy(53, 19);
-                    cout << "Your answer:";
-        
+                    cout << "Your answer: ";
+
                     gotoxy(65, 19);
                     cout << string(120, ' '); // Clear previous input
-                    // gotoxy(65, 19);
-                    // cout << string(120, ' '); // Clear previous input
-                  
+
                     gotoxy(65, 19);
-                    cin.ignore();
                     getline(cin, userAnswer);
-                          // Add a space at the beginning of userAnswer
-                             // Add a space at the beginning of userAnswer
-                    userAnswer = " " + userAnswer;
+
                     // Remove whitespaces from userAnswer and correctAnswer
                     userAnswer.erase(remove_if(userAnswer.begin(), userAnswer.end(), [](unsigned char c) {
                         return isspace(c);
@@ -379,7 +374,6 @@ case 1: {
                     correctAnswer.erase(remove_if(correctAnswer.begin(), correctAnswer.end(), [](unsigned char c) {
                         return isspace(c);
                     }), correctAnswer.end());
-                    userAnswer = " " + userAnswer;
 
                     if (userAnswer == correctAnswer) {
                         gotoxy(53, 21);
@@ -559,31 +553,31 @@ case 1: {
         string choice1;
 
         gotoxy(55, 16);
+cout << "Is the syntax right? (Yes/No): ";
+while (true) {
+    cin >> choice1;
+
+    // Convert the input to lowercase for case-insensitive comparison
+    transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+
+    if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes" || choice1 == "no" || choice1 == "NO" || choice1 == "No") { // Simplified condition
+        break;
+    } else {
+        gotoxy(53, 18);
+        cout << "Invalid input! Please enter either 'Yes' or 'No'.";
+        getch();
+        gotoxy(53, 16);
+        cout << string(30, ' '); // Clear previous input
+        gotoxy(53, 18);
+        cout << string(60, ' '); // Clear previous message
+
+        gotoxy(55, 16);
         cout << "Is the syntax right? (Yes/No): ";
-        while (true) {
-            cin >> choice1;
 
-            // Convert the input to lowercase for case-insensitive comparison
-            transform(choice1.begin(), choice1.end(), choice1.begin(), ::tolower);
+        cin.clear();   // Clear any error flags that may be set on the input
+        // cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+    }
 
-            if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes" || choice1 == "no" || choice1 == "NO" || choice1 == "No") {
-                break;
-            } else {
-                gotoxy(53, 18);
-                cout << "Invalid input! Please enter either 'Yes' or 'No'.";
-                getch();
-                gotoxy(53, 16);
-                cout << string(120, ' '); // Clear previous input
-                gotoxy(53, 18);
-                cout << string(120, ' '); // Clear previous message
-                
-                gotoxy(55, 16);
-                cout << "Is the syntax right? (Yes/No): ";
-                cin.clear();   // Clear any error flags that may be set on the input
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
-                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
-                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
-            }
         
         }
 
@@ -972,4 +966,3 @@ case 1: {
         getch();
     return 0;
 }
-
