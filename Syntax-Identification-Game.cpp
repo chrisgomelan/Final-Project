@@ -354,19 +354,23 @@ case 1: {
 
                 while (attempts < 3) {
                     attempts++;
-
+                    
                     gotoxy(53, 18);
                     cout << "Your answer is incorrect. Please input the right syntax.";
                     gotoxy(53, 19);
-                    cout << "Your answer: ";
-
+                    cout << "Your answer:";
+        
                     gotoxy(65, 19);
                     cout << string(120, ' '); // Clear previous input
-
+                    // gotoxy(65, 19);
+                    // cout << string(120, ' '); // Clear previous input
+                  
                     gotoxy(65, 19);
                     cin.ignore();
                     getline(cin, userAnswer);
-
+                          // Add a space at the beginning of userAnswer
+                             // Add a space at the beginning of userAnswer
+                    userAnswer = " " + userAnswer;
                     // Remove whitespaces from userAnswer and correctAnswer
                     userAnswer.erase(remove_if(userAnswer.begin(), userAnswer.end(), [](unsigned char c) {
                         return isspace(c);
@@ -375,6 +379,7 @@ case 1: {
                     correctAnswer.erase(remove_if(correctAnswer.begin(), correctAnswer.end(), [](unsigned char c) {
                         return isspace(c);
                     }), correctAnswer.end());
+                    userAnswer = " " + userAnswer;
 
                     if (userAnswer == correctAnswer) {
                         gotoxy(53, 21);
