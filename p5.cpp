@@ -11,10 +11,12 @@
 #include <random>
 #include <string>
 #include <sstream>
+#include <thread>
 using namespace std; 
               
 
 void printAscii(){
+    
         string asciiArt = R"(      
                                                                                                                                                                                                     
              .d8888b. Y88b   d88P 888b    888 88888888888     d8888 Y88b   d88P                   
@@ -46,13 +48,16 @@ cout << asciiArt << endl;
 
 void mechanicsTitle() {
     string asciiArt = R"(
+        
                                                                __  ______________ _____   _  _______________
                                                               /  |/  / __/ ___/ // / _ | / |/ /  _/ ___/ __/
                                                              / /|_/ / _// /__/ _  / __ |/    // // /___\ \
                                                             /_/  /_/___/\___/_//_/_/ |_/_/|_/___/\___/___/
+      
     )";
     cout << asciiArt << endl;
 }
+
 void modeTitle() {
     string asciiArt = R"(
                                                       
@@ -70,14 +75,14 @@ void modeTitle() {
     cout << asciiArt << endl;
 }
 
+
 void thanks(){
      string asciiArt = R"(    
                         ::::::'########:'##::::'##::::'###::::'##::: ##:'##:::'##::::'##:::'##::'#######::'##::::'##:                    
                         ::::::... ##..:: ##:::: ##:::'## ##::: ###:: ##: ##::'##:::::. ##:'##::'##.... ##: ##:::: ##:                    
                         ::::::::: ##:::: ##:::: ##::'##:. ##:: ####: ##: ##:'##:::::::. ####::: ##:::: ##: ##:::: ##:                    
                         ::::::::: ##:::: #########:'##:::. ##: ## ## ##: #####:::::::::. ##:::: ##:::: ##: ##:::: ##:                    
-                        ::::::::: ##:::: ##.... ##: #########: ##. ####: ##. ##::::::::: ##:::: ##:::: ##: ##:::: ##:                    
-                        ::::::::: ##:::: ##:::: ##: ##.... ##: ##:. ###: ##:. ##:::::::: ##:::: ##:::: ##: ##:::: ##:                    
+                        ::::::::: ##:::: ##.... ##: #########: ##. ####: ##. ##::::::::: ##:::: ##:::: ##: ##:::: ##:                                                            
                         ::::::::: ##:::: ##:::: ##: ##:::: ##: ##::. ##: ##::. ##::::::: ##::::. #######::. #######::                    
                         :::::::::..:::::..:::::..::..:::::..::..::::..::..::::..::::::::..::::::.......::::.......:::                    
                     '########::'#######::'########:::::'########::'##::::::::::'###::::'##:::'##:'####:'##::: ##::'######:::'####::::
@@ -85,13 +90,15 @@ void thanks(){
                     ##::::::: ##:::: ##: ##:::: ##:::: ##:::: ##: ##::::::::'##:. ##:::. ####:::: ##:: ####: ##: ##:::..::: ####::::
                     ######::: ##:::: ##: ########::::: ########:: ##:::::::'##:::. ##:::. ##::::: ##:: ## ## ##: ##::'####:: ##:::::
                     ##...:::: ##:::: ##: ##.. ##:::::: ##.....::: ##::::::: #########:::: ##::::: ##:: ##. ####: ##::: ##:::..::::::
-                    ##::::::: ##:::: ##: ##::. ##::::: ##:::::::: ##::::::: ##.... ##:::: ##::::: ##:: ##:. ###: ##::: ##::'####::::
                     ##:::::::. #######:: ##:::. ##:::: ##:::::::: ########: ##:::: ##:::: ##::::'####: ##::. ##:. ######::: ####::::
                     ..:::::::::.......:::..:::::..:::::..:::::::::........::..:::::..:::::..:::::....::..::::..:::......::::....:::::
+
          )";
         cout << asciiArt << endl;
+    
+}
 
-}void play(){
+void play(){
      string asciiArt = R"(                                     
                                                   ----------------------------------------------        
                                                     You've survived the game's challenges and       
@@ -160,7 +167,8 @@ void Mechanics(char name[100]){
     // gotoxy(70,7);{
     //   cout << "==================";
     // }
- mechanicsTitle();
+    mechanicsTitle();
+
    //First Mechanic w/ type writing logic
     gotoxy(17,9);{
         
@@ -201,6 +209,7 @@ char name[100]; //variable for name of the user
 int main(){
 system("cls");
     system("Color 0E");
+   
   int attempts = 0;
   bool correct = false; 
 
@@ -231,10 +240,10 @@ system("cls");
 
     // ASCII art as a string
  printAscii();
-    gotoxy(15,31);{
+    gotoxy(15,30);{
       cout << "Welcome to the Syntax Identification Game!";
     }
-    gotoxy(15, 32);{
+    gotoxy(15, 31);{
       cout << "Please enter your name: ";
     }
 
@@ -256,18 +265,20 @@ system("cls");
    int choice = 0; // variable for choice of user's difficulty level
 while (true) {
     system("cls");
-    modeTitle();
-    gotoxy(62, 9);
+
+     modeTitle();
+    
+    gotoxy(62, 15);
     cout << "Select difficulty levels: ";
 
-    gotoxy(64, 11);
+    gotoxy(64, 17);
     cout << "1 - Easy";
-    gotoxy(64, 12);
+    gotoxy(64, 18);
     cout << "2 - Medium";
-    gotoxy(64, 13);
+    gotoxy(64, 19);
     cout << "3 - Hard";
 
-    gotoxy(62, 15);
+    gotoxy(62, 21);
     cout << "Enter your choice: ";
     cin >> choice;
 
@@ -341,7 +352,6 @@ case 1: {
         cout << "Test " << i << endl;
         gotoxy(57, 9);
         cout << "Identify if the syntax is RIGHT or WRONG:";
-
         for (int i = 10; i < 14; i++) {
             gotoxy(53, i);
             cout << "*";
@@ -378,7 +388,9 @@ case 1: {
                 break;
             } else {
                 gotoxy(53, 18);
+               
                 cout << "Invalid input! Please enter either 'Yes' or 'No'.";
+              
                 getch();
                 gotoxy(53, 16);
                 cout << string(30, ' '); // Clear previous input
@@ -396,8 +408,8 @@ case 1: {
                                                                      // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
         if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
-                gotoxy(53, 18);
-                cout << "Congratulations! Your answer is correct.";
+                gotoxy(53, 18);             
+                cout << "\033[1mCongratulations! Your answer is correct ";
                 score++;
                 getch();
             } else {
@@ -447,7 +459,7 @@ case 1: {
                     gotoxy(53, 21);
                     cout << "Sorry, you have used all 3 attempts.";
                     gotoxy(53, 22);
-                    cout << "The correct syntax is: " << correctAnswer;
+                    cout << "\033[1mThe correct syntax is: " << correctAnswer;
                     break;
                     getch();
                 }
@@ -999,7 +1011,8 @@ while (true) {
 
       char playAgainChoice;
        gotoxy(53,27);
-        cout << "Do you want to play again? (Y/N): ";
+       
+        cout << "\033[1mDo you want to play again? (Y/N): ";
         cin >> playAgainChoice;
 
         if (playAgainChoice == 'Y' || playAgainChoice == 'y') {
@@ -1007,9 +1020,10 @@ while (true) {
             continue;  // go back to the beginning of the while loop (main menu)
         } else {
           system("cls");
-               thanks();
+             thanks();
              play();
               bye();
+            
             playAgain = false;  // end the program
         }
         
