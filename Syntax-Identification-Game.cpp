@@ -335,13 +335,13 @@ case 1: {
                 
                 gotoxy(55, 16);
                  cout << "Is the syntax right? (Yes/No): ";
-                cin.clear();   // Clear any error flags that may be set on the input
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
-                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
-                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+
             }
         }
-
+                cin.clear();   // Clear any error flags that may be set on the input
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
         if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
                 gotoxy(53, 18);
@@ -416,7 +416,6 @@ case 1: {
                     cout << string(80, ' '); // Clear previous input
 
                     gotoxy(65, 19);
-                    cin.ignore();
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -574,13 +573,16 @@ while (true) {
         gotoxy(55, 16);
         cout << "Is the syntax right? (Yes/No): ";
 
-        cin.clear();   // Clear any error flags that may be set on the input
-        // cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+        // cin.clear();   // Clear any error flags that may be set on the input
     }
 
         
         }
-
+  cin.clear();   // Clear any error flags that may be set on the input
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+     
         if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
                 gotoxy(53, 18);
@@ -603,7 +605,6 @@ while (true) {
                     cout << string(120, ' '); // Clear previous input
 
                     gotoxy(59, 19);
-                    cin.ignore();
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -656,7 +657,6 @@ while (true) {
                     cout << string(120, ' '); // Clear previous input
 
                     gotoxy(59, 19);
-                    cin.ignore();
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -729,7 +729,7 @@ while (true) {
     };
 
     string syntaxWithErrors[6] = {
-    "struct type_name(dataType identifier1; dataType identifier2;) object_name;",
+    "struct type_name[dataType identifier1; dataType identifier2;] object_name;",
     "union type_name{member_type member_name1, member_type member_name2} object_name",
     "fstream fstream_name; fstream_name.open[ \"file_name.txt\", mode_flag]; //statement  fstream_name.close();",
     "class class_name{ specifier: // Class members and methods } object_name;", //correct
@@ -793,18 +793,17 @@ while (true) {
                 cout << "Invalid input! Please enter either 'Yes' or 'No'.";
                 getch();
                 gotoxy(53, 16);
-                cout << string(120, ' '); // Clear previous input
-                gotoxy(53, 18);
-                cout << string(120, ' '); // Clear previous message
+                cout << string(200, ' '); // Clear previous input
+              
                 
                 gotoxy(55, 16);
                 cout << "Is the syntax right? (Yes/No): ";
-                cin.clear();   // Clear any error flags that may be set on the input
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                 }
+        }  cin.clear();   // Clear any error flags that may be set on the input
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignor  e (discard) characters in the input buffer until a newline character ('\n') is found
                                                                      // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
                                                                      // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
-            }
-        }
+     
 
         if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
@@ -828,7 +827,6 @@ while (true) {
                     cout << string(200, ' '); // Clear previous input
 
                     gotoxy(32, 19);
-                    cin.ignore();
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -881,7 +879,6 @@ while (true) {
                     cout << string(200, ' '); // Clear previous input
 
                     gotoxy(32, 19);
-                    cin.ignore();
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
