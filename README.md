@@ -1,8 +1,3 @@
-# Final-Project
-![Design preview for the Frontpage section of Syntax Identification Game](/image/Frontpage.png)
-
-## Welcome! 👋
-=======
 # Final-Project - Syntax Identification Game
 ![Design preview for the Frontpage section of Syntax Identification Game](/image/Frontpage.png)
 
