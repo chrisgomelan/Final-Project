@@ -37,9 +37,9 @@ There is no time limit for answering the questions, so feel free to take your ti
 ## Got feedback for us?
 We love receiving feedback! We're always looking to improve our skills and our system. So if you have anything you'd like to mention, please email the following developers:
 
-Ormita, Jhon Carl T. - jcormita000@gmail.com
-Macas, Janella Shaine G. - macasjanella@gmail.com
-Rosales, Shelou Mae O. - osalesshelou81@gmail.com
+Ormita, Jhon Carl T. - jcormita000@gmail.com__
+Macas, Janella Shaine G. - macasjanella@gmail.com__
+Rosales, Shelou Mae O. - osalesshelou81@gmail.com__
 Gomelan, Christian G. - christiangomelanfog123@gmail.com
 
 **Rate your experience!**
