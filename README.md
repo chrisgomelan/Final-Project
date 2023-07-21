@@ -31,7 +31,7 @@ After completing all the questions in the chosen difficulty level or exhausting 
 After the game ends, you will have the option to play again and select a different difficulty level.
 
 
-**TAKE NOTE**
+**TAKE NOTE** </br>
 There is no time limit for answering the questions, so feel free to take your time and think through each scenario carefully. Whether you're a beginner looking to learn or an experienced programmer wanting to sharpen your skills, this challenge is designed to be both fun and educational.
 
 ## Got feedback for us?
