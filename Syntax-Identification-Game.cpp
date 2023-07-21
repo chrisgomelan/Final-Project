@@ -200,7 +200,7 @@ char name[100]; //variable for name of the user
 
 int main(){
 system("cls");
-    system("Color 0E");
+    system("Color 0B");
   int attempts = 0;
   bool correct = false; 
 
