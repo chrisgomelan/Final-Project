@@ -48,4 +48,10 @@ We highly value your feedback and would appreciate it if you could take a moment
 ## Special Thanks
 This final project, titled "Syntax Identification Game," is intended for submission to our esteemed Computer Programming professor, Professor Gecilie Almirañez. The game is designed to test and enhance our C++ syntax skills through interactive challenges and exercises.
 
+
+##Source Code and File
+Cpp file: https://github.com/chrisgomelan/Final-Project/blob/e3d0dd805c6263b3fb4a9a40d10f48462046d797/Syntax-Identification-Game.cpp
+
+Exe file:
+
 This game is completely free. Please share it with anyone who will find it useful for practice.
