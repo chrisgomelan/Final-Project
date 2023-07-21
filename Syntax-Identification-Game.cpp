@@ -326,47 +326,67 @@ case 1: {
         "any_statement ;" //correct
     };
 
+    string description[13] = {
+        "Displaying the output value of the variable",
+        "Receiving input from the user.",
+        "Syntax of variable declaration",
+        "Constant variable declaration", // correct
+        "Single-Line comment",
+        "Multi-line comment",
+        "Syntax of One-Dimensional Array",
+        "Syntax of Two-Dimensional Array",
+        "Syntax of Multi-Dimensional Array",//correct
+        "Syntax of Pointers", //correct
+        "Syntax of object declaration", //correct
+        "Syntax of C++ Namespace",
+        "C++ statement terminator" //correct
+    };
+
     int score = 0; //score variable
 
     for (int i = 1; i <= 6; i++) {
         system("cls");
+
         string random;
+        string descript;
 
         int errorIndex = (rand() % 13);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
+        descript = description[errorIndex];
 
         gotoxy(70, 6);
         cout << "Mode: Easy" << endl;
         gotoxy(72, 7);
         cout << "Test " << i << endl;
-        gotoxy(57, 9);
+        gotoxy(57,9);
         cout << "Identify if the syntax is RIGHT or WRONG:";
 
-        for (int i = 10; i < 14; i++) {
-            gotoxy(53, i);
+        for (int i = 11; i < 16; i++) {
+            gotoxy(50, i);
             cout << "*";
         }
-        for (int i = 10; i < 15; i++) {
-            gotoxy(105, i);
+        for (int i = 11; i < 17; i++) {
+            gotoxy(108, i);
             cout << "*";
         }
-        for (int i = 53; i < 105; i++) {
-            gotoxy(i, 14);
+        for (int i = 50; i < 108; i++) {
+            gotoxy(i, 16);
             cout << "*";
         }
-        for (int i = 53; i < 105; i++) {
-            gotoxy(i, 10);
+        for (int i = 50; i < 108; i++) {
+            gotoxy(i, 11);
             cout << "*";
         }
-
-        gotoxy(58, 12);
+        gotoxy(60,12);
+        cout << descript;
+        gotoxy(58, 14);
         cout << random;
 
         string userAnswer;
         string correctAnswer = syntax[errorIndex];
         string choice1;
 
-        gotoxy(55, 16);
+        gotoxy(55, 17);
         cout << "Is the syntax right? (Yes/No): ";
         while (true) {
             cin >> choice1;
@@ -377,15 +397,15 @@ case 1: {
             if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes" || choice1 == "no" || choice1 == "NO" || choice1 == "No") {
                 break;
             } else {
-                gotoxy(53, 18);
+                gotoxy(53, 19);
                 cout << "Invalid input! Please enter either 'Yes' or 'No'.";
                 getch();
-                gotoxy(53, 16);
+                gotoxy(53, 17);
                 cout << string(30, ' '); // Clear previous input
-                gotoxy(53, 18);
+                gotoxy(53, 19);
                 cout << string(60, ' '); // Clear previous message
                 
-                gotoxy(55, 16);
+                gotoxy(55, 17);
                  cout << "Is the syntax right? (Yes/No): ";
 
             }
@@ -396,7 +416,7 @@ case 1: {
                                                                      // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
         if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
-                gotoxy(53, 18);
+                gotoxy(53, 20);
                 cout << "Congratulations! Your answer is correct.";
                 score++;
                 getch();
@@ -407,15 +427,15 @@ case 1: {
                 while (attempts < 3) {
                     attempts++;
 
-                    gotoxy(53, 18);
-                    cout << "Your answer is incorrect. Please input the right syntax.";
                     gotoxy(53, 19);
+                    cout << "Your answer is incorrect. Please input the right syntax.";
+                    gotoxy(53, 20);
                     cout << "Your answer: ";
 
-                    gotoxy(65, 19);
+                    gotoxy(65, 20);
                     cout << string(120, ' '); // Clear previous input
 
-                    gotoxy(65, 19);
+                    gotoxy(65, 20);
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -428,25 +448,25 @@ case 1: {
                     }), correctAnswer.end());
 
                     if (userAnswer == correctAnswer) {
-                        gotoxy(53, 21);
+                        gotoxy(53, 22);
                         cout << "Congratulations! Your answer is correct.";
                         score++;
                         correct = true; // Set correct to true
                         getch();
                         break; // Break out of the while loop if the answer is correct
                     } else {
-                        gotoxy(53, 21);
-                        cout << "Sorry, your answer is incorrect.";
                         gotoxy(53, 22);
+                        cout << "Sorry, your answer is incorrect.";
+                        gotoxy(53, 23);
                         cout << "Attempts left: " << 3 - attempts << endl;
                         getch();
                     }
                 }
 
                 if (!correct) { // Display the correct answer if the user couldn't provide the correct syntax
-                    gotoxy(53, 21);
-                    cout << "Sorry, you have used all 3 attempts.";
                     gotoxy(53, 22);
+                    cout << "Sorry, you have used all 3 attempts.";
+                    gotoxy(53, 23);
                     cout << "The correct syntax is: " << correctAnswer;
                     break;
                     getch();
@@ -459,15 +479,15 @@ case 1: {
 
                 while (attempts < 3) {
                     attempts++;
-                    gotoxy(53, 18);
-                    cout << "Please input the right syntax.";
                     gotoxy(53, 19);
+                    cout << "Please input the right syntax.";
+                    gotoxy(53, 20);
                     cout << "Your answer: ";
 
-                    gotoxy(65, 19);
+                    gotoxy(65, 20);
                     cout << string(80, ' '); // Clear previous input
 
-                    gotoxy(65, 19);
+                    gotoxy(65, 20);
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -480,38 +500,38 @@ case 1: {
                     }), correctAnswer.end());
 
                     if (userAnswer == correctAnswer) {
-                        gotoxy(53, 21);
+                        gotoxy(53, 22);
                         cout << "Congratulations! Your answer is correct.";
                         score++;
                         correct = true; // Set correct to true
                         getch();
                         break;
                     } else {
-                        gotoxy(53, 21);
-                        cout << "Sorry, your answer is incorrect.";
                         gotoxy(53, 22);
+                        cout << "Sorry, your answer is incorrect.";
+                        gotoxy(53, 23);
                         cout << "Attempts left: " << 3 - attempts << endl;
                         getch();
                     }
                 }
 
                 if (!correct) { // Display the correct answer if the user couldn't provide the correct syntax
-                    gotoxy(53, 21);
-                    cout << "Sorry, you have used all 3 attempts.";
                     gotoxy(53, 22);
+                    cout << "Sorry, you have used all 3 attempts.";
+                    gotoxy(53, 23);
                     cout << "The correct syntax is: " << correctAnswer;
                     break;
                     getch();
                 }
             } else {
-                gotoxy(53, 18);
-                cout << "Sorry, your answer is incorrect.";
                 gotoxy(53, 19);
+                cout << "Sorry, your answer is incorrect.";
+                gotoxy(53, 20);
                 cout << "The correct syntax is: " << correctAnswer;
                 getch();
             }
         } else { // INVALID
-            gotoxy(53, 18);
+            gotoxy(53, 19);
             cout << "Invalid input! Please enter either 'Yes' or 'No'.";
             getch();
             i--; // Decrease the loop counter to repeat the current test
@@ -520,7 +540,8 @@ case 1: {
 
     gotoxy(53, 25);
     cout << "Your score is: " << score << "/6" << endl;
-
+   gotoxy(53, 27);
+   cout << "Press any key to proceed...";
     getch();
     break;
 }
@@ -562,15 +583,32 @@ case 1: {
             "enum newType = {valueList};"
 
         }; 
+         string description[13] = {
+            "Function with no arguments and no return value.",
+            "Function with argument and no return value.",   
+            "Function with no arguments but with return value", //correct
+            "Function with arguments and return value",
+            "Syntax of switch statement", //guds na y
+            "Syntax of if-else statement",
+            "Syntax of for loop", 
+            "Syntax of do-while loop",//correct
+            "Syntax of while loop",
+            "Syntax of C++ macro definition",
+            "Syntax that creates name for an existing data type",
+            "Syntax that creates name for an existing data type",
+            "Syntax of enumeration declaration."
+        }; 
  
    int score = 0; //score variable
 
   for (int i = 1; i <= 5; i++) {
         system("cls");
         string random;
+        string descript;
 
         int errorIndex = (rand() % 13);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
+        descript = description[errorIndex];
 
         gotoxy(70, 6);
         cout << "Mode: Medium" << endl;
@@ -579,33 +617,35 @@ case 1: {
         gotoxy(57, 9);
         cout << "Identify if the syntax is RIGHT or WRONG:";
        
-        for (int i = 10; i < 14; i++) {
+        for (int i = 10; i < 15; i++) {
             gotoxy(40, i);
             cout << "*";
         }
-        for (int i = 10; i < 15; i++) {
+        for (int i = 10; i < 16; i++) {
             gotoxy(120, i);
             cout << "*";
         }
         for (int i = 40; i < 120; i++) {
-            gotoxy(i, 14);
+            gotoxy(i, 15);
             cout << "*";
         }
         for (int i = 40; i < 120; i++) {
             gotoxy(i, 10);
             cout << "*";
         }
-
-         gotoxy(48, 12);
+        gotoxy(53,11);
+        cout << descript;
+         gotoxy(48, 13);
         cout << random;
 
         string userAnswer;
         string correctAnswer = syntax[errorIndex];
         string choice1;
 
-        gotoxy(55, 16);
-cout << "Is the syntax right? (Yes/No): ";
-while (true) {
+        gotoxy(55, 17);
+        cout << "Is the syntax right? (Yes/No): ";
+   
+   while (true) {
     cin >> choice1;
 
     // Convert the input to lowercase for case-insensitive comparison
@@ -614,30 +654,29 @@ while (true) {
     if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes" || choice1 == "no" || choice1 == "NO" || choice1 == "No") { // Simplified condition
         break;
     } else {
-        gotoxy(53, 18);
+        gotoxy(53, 19);
         cout << "Invalid input! Please enter either 'Yes' or 'No'.";
         getch();
-        gotoxy(53, 16);
+        gotoxy(53, 17);
         cout << string(30, ' '); // Clear previous input
-        gotoxy(53, 18);
+        gotoxy(53, 19);
         cout << string(60, ' '); // Clear previous message
 
-        gotoxy(55, 16);
+        gotoxy(55, 17);
         cout << "Is the syntax right? (Yes/No): ";
 
-        // cin.clear();   // Clear any error flags that may be set on the input
     }
 
         
         }
-  cin.clear();   // Clear any error flags that may be set on the input
+                cin.clear();   // Clear any error flags that may be set on the input
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
                                                                      // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
                                                                      // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
      
         if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
             if (random == correctAnswer) {
-                gotoxy(53, 18);
+                gotoxy(53, 19);
                 cout << "Congratulations! Your answer is correct.";
                 score++;
                 getch();
@@ -648,15 +687,15 @@ while (true) {
                 while (attempts < 3) {
                     attempts++;
 
-                    gotoxy(47, 18);
-                    cout << "Your answer is incorrect. Please input the right syntax.";
                     gotoxy(47, 19);
+                    cout << "Your answer is incorrect. Please input the right syntax.";
+                    gotoxy(47, 20);
                     cout << "Your answer: ";
 
-                    gotoxy(59, 19);
+                    gotoxy(59, 20);
                     cout << string(120, ' '); // Clear previous input
 
-                    gotoxy(59, 19);
+                    gotoxy(59, 20);
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -669,25 +708,25 @@ while (true) {
                     }), correctAnswer.end());
 
                     if (userAnswer == correctAnswer) {
-                        gotoxy(53, 21);
+                        gotoxy(53, 22);
                         cout << "Congratulations! Your answer is correct.";
                         score++;
                         correct = true; // Set correct to true
                         getch();
                         break; // Break out of the while loop if the answer is correct
                     } else {
-                        gotoxy(53, 21);
-                        cout << "Sorry, your answer is incorrect.";
                         gotoxy(53, 22);
+                        cout << "Sorry, your answer is incorrect.";
+                        gotoxy(53, 23);
                         cout << "Attempts left: " << 3 - attempts << endl;
                         getch();
                     }
                 }
 
                 if (!correct) { // Display the correct answer if the user couldn't provide the correct syntax
-                    gotoxy(53, 21);
-                    cout << "Sorry, you have used all 3 attempts.";
                     gotoxy(53, 22);
+                    cout << "Sorry, you have used all 3 attempts.";
+                    gotoxy(53, 23);
                     cout << "The correct syntax is: " << correctAnswer;
                     break;
                     getch();
@@ -700,15 +739,15 @@ while (true) {
 
                 while (attempts < 3) {
                     attempts++;
-                    gotoxy(47, 18);
-                    cout << "Please input the right syntax.";
                     gotoxy(47, 19);
+                    cout << "Please input the right syntax.";
+                    gotoxy(47, 20);
                     cout << "Your answer: ";
 
-                    gotoxy(59, 19);
+                    gotoxy(59, 20);
                     cout << string(120, ' '); // Clear previous input
 
-                    gotoxy(59, 19);
+                    gotoxy(59, 20);
                     getline(cin, userAnswer);
 
                     // Remove whitespaces from userAnswer and correctAnswer
@@ -721,38 +760,38 @@ while (true) {
                     }), correctAnswer.end());
 
                     if (userAnswer == correctAnswer) {
-                        gotoxy(53, 21);
+                        gotoxy(53, 22);
                         cout << "Congratulations! Your answer is correct.";
                         score++;
                         correct = true; // Set correct to true
                         getch();
                         break;
                     } else {
-                        gotoxy(53, 21);
-                        cout << "Sorry, your answer is incorrect.";
                         gotoxy(53, 22);
+                        cout << "Sorry, your answer is incorrect.";
+                        gotoxy(53, 23);
                         cout << "Attempts left: " << 3 - attempts << endl;
                         getch();
                     }
                 }
 
                 if (!correct) { // Display the correct answer if the user couldn't provide the correct syntax
-                    gotoxy(53, 21);
-                    cout << "Sorry, you have used all 3 attempts.";
                     gotoxy(53, 22);
+                    cout << "Sorry, you have used all 3 attempts.";
+                    gotoxy(53, 23);
                     cout << "The correct syntax is: " << correctAnswer;
                     break;
                     getch();
                 }
             } else {
-                gotoxy(53, 18);
-                cout << "Sorry, your answer is incorrect.";
                 gotoxy(53, 19);
+                cout << "Sorry, your answer is incorrect.";
+                gotoxy(53, 20);
                 cout << "The correct syntax is: " << correctAnswer;
                 getch();
             }
         } else { // INVALID
-            gotoxy(53, 18);
+            gotoxy(53, 19);
             cout << "Invalid input! Please enter either 'Yes' or 'No'.";
             getch();
             i--; // Decrease the loop counter to repeat the current test
@@ -761,7 +800,8 @@ while (true) {
 
     gotoxy(53, 25);
     cout << "Your score is: " << score << "/5" << endl;
-
+    gotoxy(53, 27);
+    cout << "Press any key to proceed...";
     getch();
     break;
 }
@@ -789,15 +829,26 @@ while (true) {
     "do{ do{ //statement of inside loop } while(condition); //statement of outerloop } while (condition)" //correct
     };
 
+    string description[6] = {
+    "Syntax of Structure",
+    "Syntax of Union",
+    "Syntax of File Handling",
+    "Syntax of Class and Object", 
+    "Syntax of Nested while loop",
+    "Syntax of Nested do-while loop" 
+    };
+
  
    int score = 0; //score variable
 
  for (int i = 1; i <= 5; i++) {
         system("cls");
         string random;
+        string descript;
 
-        int errorIndex = (rand() % 6);  //random number
+        int errorIndex = (rand() % 13);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
+        descript = description[errorIndex];
 
         gotoxy(70, 6);
         cout << "Mode: Hard" << endl;
@@ -822,8 +873,9 @@ while (true) {
             gotoxy(i, 10);
             cout << "*";
         }
-
-        gotoxy(33, 12);
+        gotoxy(68,11);
+        cout << descript;
+        gotoxy(33, 13);
          cout << random;
 
         string userAnswer;
@@ -983,7 +1035,8 @@ while (true) {
 
     gotoxy(53, 25);
     cout << "Your score is: " << score << "/5" << endl;
-
+    gotoxy(53, 27);
+    cout << "Press any key to proceed...";
     getch();
     break;
   }
