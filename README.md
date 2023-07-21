@@ -42,7 +42,7 @@ Macas, Janella Shaine G. - macasjanella@gmail.com</br>
 Rosales, Shelou Mae O. - osalesshelou81@gmail.com</br>
 Gomelan, Christian G. - christiangomelanfog123@gmail.com
 
-**Rate your experience!**
+**Rate your experience!**</br>
 We highly value your feedback and would appreciate it if you could take a moment to rate your experience with us. Kindly visit the following link to share your thoughts: https://forms.gle/jb4dj1mPS7Y4LfHQ6
 
 ## Special Thanks
