@@ -254,37 +254,38 @@ system("cls");
     {
     // Difficulty Levels Menu
    int choice = 0; // variable for choice of user's difficulty level
-while (true) {
-    system("cls");
-    modeTitle();
-    gotoxy(62, 9);
-    cout << "Select difficulty levels: ";
+do {
+        system("cls");
+        modeTitle();
+        gotoxy(62, 9);
+        cout << "Select difficulty levels: ";
 
-    gotoxy(64, 11);
-    cout << "1 - Easy";
-    gotoxy(64, 12);
-    cout << "2 - Medium";
-    gotoxy(64, 13);
-    cout << "3 - Hard";
+        gotoxy(64, 11);
+        cout << "1 - Easy";
+        gotoxy(64, 12);
+        cout << "2 - Medium";
+        gotoxy(64, 13);
+        cout << "3 - Hard";
 
-    gotoxy(62, 15);
-    cout << "Enter your choice: ";
-    cin >> choice;
+        gotoxy(62, 15);
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    if (choice >= 1 && choice <= 3) {
-        break; // Exit the loop if the choice is valid
-    } else {
-        gotoxy(62, 16);
-        cout << "Invalid input. Please try again.";
-        Sleep(2000); // Sleep for 2 seconds
-               
-    
-       cin.clear();    // Clear input buffer
-       cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
-                                                                     // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
-                                                                     // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
-            }
-}
+        if (choice >= 1 && choice <= 3) {
+            break; // Exit the loop if the choice is valid
+        } else {
+            gotoxy(62, 16);
+            cout << "Invalid input. Please try again.";
+            getch();
+            // Sleep(2000); // Sleep for 2 seconds
+
+            cin.clear(); // Clear input buffer
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                                               // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                                                               // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+        }
+    } while (true);
+
 
 
 //start of switch
@@ -521,7 +522,7 @@ case 1: {
                     gotoxy(53, 23);
                     cout << "The correct syntax is: " << correctAnswer;
                     break;
-                    getch();
+                    
                 }
             } else {
                 gotoxy(53, 19);
@@ -540,9 +541,6 @@ case 1: {
 
     gotoxy(53, 25);
     cout << "Your score is: " << score << "/6" << endl;
-   gotoxy(53, 27);
-   cout << "Press any key to proceed...";
-    getch();
     break;
 }
 
