@@ -20,7 +20,7 @@ Here are the available difficulty levels:
 
 - Hard - For those seeking a real challenge, the hard mode offers 5 difficult questions that will put your advanced C++ syntax knowledge to the test. Expect questions related to unions, file handling, structures, and other advanced concepts.
 
-**Attempts**
+**Attempts:**
 The game provides you with three attempts for each question. If you answer correctly on your first try, you'll receive a (1) point for that question. However, if your initial attempt is incorrect, you can try twice more to get the correct answer. Keep in mind that you will not lose points for wrong answers, but multiple attempts may affect your final score.
 
 **Scoring:**
@@ -34,7 +34,6 @@ After the game ends, you will have the option to play again and select a differe
 **TAKE NOTE**
 There is no time limit for answering the questions, so feel free to take your time and think through each scenario carefully. Whether you're a beginner looking to learn or an experienced programmer wanting to sharpen your skills, this challenge is designed to be both fun and educational.
 
-
 ## Got feedback for us?
 We love receiving feedback! We're always looking to improve our skills and our system. So if you have anything you'd like to mention, please email the following developers:
 
@@ -46,9 +45,7 @@ Gomelan, Christian G. - christiangomelanfog123@gmail.com
 **Rate your experience!**
 We highly value your feedback and would appreciate it if you could take a moment to rate your experience with us. Kindly visit the following link to share your thoughts: https://forms.gle/jb4dj1mPS7Y4LfHQ6
 
-
-
+## Special Thanks
 This final project, titled "Syntax Identification Game," is intended for submission to our esteemed Computer Programming professor, Professor Gecilie Almirañez. The game is designed to test and enhance our C++ syntax skills through interactive challenges and exercises.
-
 
 This game is completely free. Please share it with anyone who will find it useful for practice.
