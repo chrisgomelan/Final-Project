@@ -330,16 +330,16 @@ case 1: {
         "Displaying the output value of the variable",
         "Receiving input from the user.",
         "Syntax of variable declaration",
-        "Constant variable declaration", // correct
+        "Constant variable declaration", 
         "Single-Line comment",
         "Multi-line comment",
         "Syntax of One-Dimensional Array",
         "Syntax of Two-Dimensional Array",
-        "Syntax of Multi-Dimensional Array",//correct
-        "Syntax of Pointers", //correct
-        "Syntax of object declaration", //correct
+        "Syntax of Multi-Dimensional Array",
+        "Syntax of Pointers", 
+        "Syntax of object declaration", 
         "Syntax of C++ Namespace",
-        "C++ statement terminator" //correct
+        "C++ statement terminator" 
     };
 
     int score = 0; //score variable
@@ -559,14 +559,14 @@ case 1: {
             "switch(expression){case value1: //statements break; ...}", 
             "if (condition) { //statements if true } else { //statements if false}",  
             "for (initialization; condition; iteration){ //statements }", 
-            "do { //statements } while (condition);",// easy pa nkalagay 
+            "do { //statements } while (condition);",
             "while (condition) {// statements}",
             "#define constant_name value",
             "typedef existingType newName;",
             "using newTypeName = existingType;",
-            "enum newType = {valueList};" // oks na anyare
-        };                                // pag 2 pinipilii ko, easy pa rin nalabas- wai,t 
-                                         //kahit napalitan na?
+            "enum newType = {valueList};" 
+        };                               
+
         string syntaxWithErrors[13] = {
             "void variable_name (void) { //statements}",
             "void function_name (dataType value_name { //statements}",   
@@ -586,12 +586,12 @@ case 1: {
          string description[13] = {
             "Function with no arguments and no return value.",
             "Function with argument and no return value.",   
-            "Function with no arguments but with return value", //correct
+            "Function with no arguments but with return value", 
             "Function with arguments and return value",
-            "Syntax of switch statement", //guds na y
+            "Syntax of switch statement", 
             "Syntax of if-else statement",
             "Syntax of for loop", 
-            "Syntax of do-while loop",//correct
+            "Syntax of do-while loop",
             "Syntax of while loop",
             "Syntax of C++ macro definition",
             "Syntax that creates name for an existing data type",
