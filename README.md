@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Final-Project
 ![Design preview for the Frontpage section of Syntax Identification Game](/image/Frontpage.png)
 
@@ -55,4 +54,3 @@ We highly value your feedback and would appreciate it if you could take a moment
 This final project, titled "Syntax Identification Game," is intended for submission to our esteemed Computer Programming professor, Professor Gecilie Almirañez. The game is designed to test and enhance our C++ syntax skills through interactive challenges and exercises.
 
 This game is completely free. Please share it with anyone who will find it useful for practice.
->>>>>>> d8276d320f3c0501302d8e455282ab32aef79922
