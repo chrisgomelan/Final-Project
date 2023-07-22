@@ -522,7 +522,7 @@ case 1: {
                     gotoxy(53, 23);
                     cout << "The correct syntax is: " << correctAnswer;
                     break;
-                    
+                    getch();
                 }
             } else {
                 gotoxy(53, 19);
@@ -541,6 +541,9 @@ case 1: {
 
     gotoxy(53, 25);
     cout << "Your score is: " << score << "/6" << endl;
+   gotoxy(53, 27);
+   cout << "Press any key to proceed...";
+    getch();
     break;
 }
 

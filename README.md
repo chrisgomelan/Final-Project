@@ -4,7 +4,7 @@
 ## Welcome! 👋
 Thanks for checking out our final project in Computer Programming 2
 
-**To play this game, you need a basic understanding of C++ and also if you want to practice your syntax skills in C++.**
+**To play this game, you need a basic understanding of C++ to practice your syntax skills in C++.**
 
 ## Objective 
 The C++ Syntax Challenge is designed to help you practice and improve your C++ syntax skills. It presents you with various coding scenarios, and your task is to identify correctly the C++ syntax to solve each problem.
