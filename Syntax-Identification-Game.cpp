@@ -847,7 +847,7 @@ case 1: {
         string random;
         string descript;
 
-        int errorIndex = (rand() % 13);  //random number
+        int errorIndex = (rand() % 6);  //random number
         random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
         descript = description[errorIndex];
 

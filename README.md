@@ -46,7 +46,7 @@ Gomelan, Christian G. - christiangomelanfog123@gmail.com
 We highly value your feedback and would appreciate it if you could take a moment to rate your experience with us. Kindly visit the following link to share your thoughts: https://forms.gle/jb4dj1mPS7Y4LfHQ6
 
 ## Special Thanks
-This final project, titled "Syntax Identification Game," is intended for submission to our esteemed Computer Programming professor, Professor Gecilie Almirañez. The game is designed to test and enhance our C++ syntax skills through interactive challenges and exercises.
+This final project, titled "Syntax Identification Game," is intended for submission to our esteemed Computer Programming Professor, Professor Gecilie Almirañez. The game is designed to test and enhance our C++ syntax skills through interactive challenges and exercises.
 
 
 ## Download
