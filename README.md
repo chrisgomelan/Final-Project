@@ -50,7 +50,7 @@ This final project, titled "Syntax Identification Game," is intended for submiss
 
 
 ## Download
-Cpp file: https://github.com/chrisgomelan/Final-Project/releases/download/v0.1/Syntax-Identification-Game.cpp
+Cpp file: https://github.com/chrisgomelan/Final-Project/releases/download/v0.1/Syntax-Identification-Game.cpp </br>
 Exe file: https://github.com/chrisgomelan/Final-Project/releases/download/v0.1/Syntax-Identification-Game.exe
 
 This game is completely free. Please share it with anyone who will find it useful for practice.
