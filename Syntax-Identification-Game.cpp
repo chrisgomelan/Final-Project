@@ -280,7 +280,7 @@ do {
             // Sleep(2000); // Sleep for 2 seconds
 
             cin.clear(); // Clear input buffer
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+    std::cin.ignore(2147483647, '\n');
                                                                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
                                                                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
         }
