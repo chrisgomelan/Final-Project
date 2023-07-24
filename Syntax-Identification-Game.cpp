@@ -112,7 +112,9 @@ void welcomeScreen() {
     string asciiArt = R"(      
              .-.                                            ,-.
           .-(   )-.           *    .                     ,-(   )-.          .         *
-         (     __) )-.   *             *              ,-(_      __)-,     .           .           * 
+          (     __) )-.   *             *              ,-(_      __)     .           .           * 
+         `-(       __)        .                       (_    )  __)-'     *              .      .  
+            `(____)-'.    .            .               `-(____)-'                           *        .
           `   ___                       ___           *     .     ___       .   ___     
              /  /\     *    ___        /__/\          ___        /  /\         /__/|    
           * /  /:/_        /__/|   .   \  \:\    *   /  /\   .  /  /::\       |  |:|    .  *
@@ -124,16 +126,16 @@ void welcomeScreen() {
          . \__\/ /:/  *     \  \:\   \  \:\           \  \:\   \  \:\          |  |:|             /)__)     
              /__/:/   .      \__\/    \  \:\       *   \__\/    \  \:\         |  |:|      *   --''--''--
            . \__\/                     \__\/ .                .  \__\/         |__|/                                                                                                                            
-                                                                                                       
-
+        *                          .                                               .                                                            
+                                                       .                                    .                        .
 
 
   )";
     cout << asciiArt;
-    gotoxy(1, 17); {
+    gotoxy(1, 20); {
         cout << "Welcome to the Syntax Identification Game!";
     }
-    gotoxy(1, 18); {
+    gotoxy(1, 21); {
         cout << "Press enter to start";
     }
 }
@@ -237,14 +239,14 @@ int main() {
 
     // Prompt the user to input their name
     string name;
-    gotoxy(1, 20); {
+    gotoxy(1, 23); {
         cout << "[ ENTER YOUR NAME ]: ";
         getline(cin, name);
     }
-      //  cin.ignore(); //The cin. ignore() function is used which is used to ignore or clear one or more characters from the input buffer.
-    
+    //  cin.ignore(); //The cin. ignore() function is used which is used to ignore or clear one or more characters from the input buffer.
 
-    //Mechanics function call
+
+  //Mechanics function call
     Mechanics(name);
     // _getch();
 
