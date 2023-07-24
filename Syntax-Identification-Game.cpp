@@ -14,28 +14,13 @@
 #include <sstream>
 using namespace std;
 
+//gotoxy function                  
+void gotoxy(int x, int y) {
+    COORD coord;
+    coord.X = x;
+    coord.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 
-void printAscii() {
-    string asciiArt = R"(      
-     .-.                                            ,-.
-  .-(   )-.           *    .                     ,-(   )-.          .         *
- (     __) )-.   *             *              ,-(_      __)     .           .           * 
-  `-(       __)        .                       (_    )  __)-'     *              .      .  
-    `(____)-'.    .            .               `-(____)-'                           *        .
-      ___                       ___           *     .     ___       .   ___     
-     /  /\     *    ___        /__/\          ___        /  /\         /__/|    
-  * /  /:/_        /__/|   .   \  \:\    *   /  /\   .  /  /::\       |  |:|    .  *
-   /  /:/ /\      |  |:|        \  \:\      /  /:/     /  /:/\:\      |  |:|    
-  /  /:/ /::\     |  |:|    _____\__\:\    /  /:/     /  /:/~/::\   __|__|:|    .
- /__/:/ /:/\:\  __|__|:|   /__/::::::::\  /  /::\    /__/:/ /:/\:\ /__/::::\____                 
- \  \:\/:/~/:/ /__/::::\   \  \:\~~\~~\/ /__/:/\:\   \  \:\/:/__\/    ~\~~\::::/          ,___,
-  \  \::/ /:/     ~\~~\:\   \  \:\  ~~~  \__\/  \:\   \  \::/      .   |~~|:|~~           [ O.0]
- . \__\/ /:/  *     \  \:\   \  \:\           \  \:\   \  \:\          |  |:|             /)__)     
-     /__/:/   .      \__\/    \  \:\       *   \__\/    \  \:\         |  |:|      *   --''--''--
-     \__\/                     \__\/ .                .  \__\/         |__|/                                                                                                                            
- 
-                                                                                                 )";
-    cout << asciiArt << endl;
 }
 
 void mechanicsTitle() {
@@ -123,17 +108,40 @@ void bye() {
 
 }
 
-//gotoxy function                  
-void gotoxy(int x, int y) {
-    COORD coord;
-    coord.X = x;
-    coord.Y = y;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+void welcomeScreen() {
+    string asciiArt = R"(      
+             .-.                                            ,-.
+          .-(   )-.           *    .                     ,-(   )-.          .         *
+         (     __) )-.   *             *              ,-(_      __)-,     .           .           * 
+          `   ___                       ___           *     .     ___       .   ___     
+             /  /\     *    ___        /__/\          ___        /  /\         /__/|    
+          * /  /:/_        /__/|   .   \  \:\    *   /  /\   .  /  /::\       |  |:|    .  *
+  *        /  /:/ /\      |  |:|        \  \:\      /  /:/     /  /:/\:\      |  |:|    
+          /  /:/ /::\     |  |:|    _____\__\:\    /  /:/     /  /:/~/::\   __|__|:|    .
+   .     /__/:/ /:/\:\  __|__|:|   /__/::::::::\  /  /::\    /__/:/ /:/\:\ /__/::::\____                 
+         \  \:\/:/~/:/ /__/::::\   \  \:\~~\~~\/ /__/:/\:\   \  \:\/:/__\/    ~\~~\::::/          ,___,
+          \  \::/ /:/     ~\~~\:\   \  \:\  ~~~  \__\/  \:\   \  \::/      .   |~~|:|~~           [ O.0]
+         . \__\/ /:/  *     \  \:\   \  \:\           \  \:\   \  \:\          |  |:|             /)__)     
+             /__/:/   .      \__\/    \  \:\       *   \__\/    \  \:\         |  |:|      *   --''--''--
+           . \__\/                     \__\/ .                .  \__\/         |__|/                                                                                                                            
+                                                                                                       
 
+
+
+  )";
+    cout << asciiArt;
+    gotoxy(1, 17); {
+        cout << "Welcome to the Syntax Identification Game!";
+    }
+    gotoxy(1, 18); {
+        cout << "Press enter to start";
+    }
 }
 
+
+
 //Mechanics Function with an argument name from the user input
-void Mechanics(char name[100]) {
+void Mechanics(string name) {
 
     //Mechanics of the Game store in variables  
     string mech = "- Choose your difficulty level (Easy, Medium, Hard) and identify whether the provided syntax is correct or incorrect. ";
@@ -190,7 +198,7 @@ void Mechanics(char name[100]) {
     _getch();
 }
 
-char name[100]; //variable for name of the user
+string name; //variable for name of the user
 
 int main() {
     system("cls");
@@ -224,17 +232,17 @@ int main() {
     //This section is for Welcoming and Prompting user to input his/her name
 
         // ASCII art as a string
-    printAscii();
-    gotoxy(12, 20); {
-        cout << "Welcome to the Syntax Identification Game!";
-    }
-    gotoxy(12, 21); {
-        cout << "Please enter your name: ";
-    }
+    welcomeScreen();
+    std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
 
-    //input name of user
-    cin.get(name, 100);
-    cin.ignore(); //The cin. ignore() function is used which is used to ignore or clear one or more characters from the input buffer.
+    // Prompt the user to input their name
+    string name;
+    gotoxy(1, 20); {
+        cout << "[ ENTER YOUR NAME ]: ";
+        getline(cin, name);
+    }
+      //  cin.ignore(); //The cin. ignore() function is used which is used to ignore or clear one or more characters from the input buffer.
+    
 
     //Mechanics function call
     Mechanics(name);
@@ -275,9 +283,9 @@ int main() {
                 // Sleep(2000); // Sleep for 2 seconds
 
                 cin.clear(); // Clear input buffer
-                cin.ignore(2147483647, '\n');
-               // Ignore and clear the input buffer, discarding any remaining characters, including newline,
-                // up to the maximum representable value for a 32-bit signed integer (INT_MAX).
+                std::cin.ignore(2147483647, '\n');
+                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
             }
         } while (true);
 
@@ -408,8 +416,9 @@ int main() {
                     }
                 }
                 cin.clear();   // Clear any error flags that may be set on the input
-                cin.ignore(2147483647, '\n');  // Ignore and clear the input buffer, discarding any remaining characters, including newline,
-                // up to the maximum representable value for a 32-bit signed integer (INT_MAX).
+                std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
                 if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
                     if (random == correctAnswer) {
                         gotoxy(53, 20);
@@ -673,8 +682,10 @@ int main() {
 
                 }
                 cin.clear();   // Clear any error flags that may be set on the input
-                cin.ignore(2147483647, '\n'); // Ignore and clear the input buffer, discarding any remaining characters, including newline,
-                    // up to the maximum representable value for a 32-bit signed integer (INT_MAX).
+                std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+
                 if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
                     if (random == correctAnswer) {
                         gotoxy(53, 19);
@@ -912,8 +923,10 @@ int main() {
                         cout << "Is the syntax right? (Yes/No): ";
                     }
                 }  cin.clear();   // Clear any error flags that may be set on the input
-                cin.ignore(2147483647, '\n'); // Ignore and clear the input buffer, discarding any remaining characters, including newline,
-// up to the maximum representable value for a 32-bit signed integer (INT_MAX).
+                std::cin.ignore(2147483647, '\n');  // Ignor  e (discard) characters in the input buffer until a newline character ('\n') is found
+                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
+                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+
 
                 if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
                     if (random == correctAnswer) {
