@@ -1,0 +1,13 @@
+Displaying the output value of the variable
+Receiving input from the user.
+Syntax of variable declaration
+Constant variable declaration
+Single-Line comment
+Multi-line comment
+Syntax of One-Dimensional Array
+Syntax of Two-Dimensional Array
+Syntax of Multi-Dimensional Array
+Syntax of Pointers
+Syntax of object declaration
+Syntax of C++ Namespace
+C++ statement terminator

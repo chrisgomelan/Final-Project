@@ -1,0 +1,13 @@
+cout<<variable_name;
+cin>>variable;
+dataType variableName = value;
+const type name = value;
+// comment
+/* comment */
+dataType arrayName[arraySize];
+dataType arrayName [rowSize][columnSize]; 
+dataType arrayName [size1][size2]...[sizeN]; 
+dataType *identifier; 
+class_name object_name; 
+using namespace std; 
+any_statement ; 

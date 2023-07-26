@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <cctype> // for isspace
 #include <random>
+#include<fstream>
 #include <string>
 #include <sstream>
 using namespace std;
@@ -23,6 +24,7 @@ void gotoxy(int x, int y) {
 
 }
 
+// ASCII art as a string
 void mechanicsTitle() {
     string asciiArt = R"(
                                                            __  ______________ _____   _  _______________
@@ -154,16 +156,7 @@ void Mechanics(string name) {
     system("cls");
 
 
-    //Header of Mechanics 
-     // gotoxy(70,5);{
-     //   cout << "==================";
-     // }
-     // gotoxy(70,6);{
-     //   cout << "  Game Mechanics";
-     // }
-     // gotoxy(70,7);{
-     //   cout << "==================";
-     // }
+ 
     mechanicsTitle();
     //First Mechanic w/ type writing logic
     gotoxy(17, 9); {
@@ -209,46 +202,23 @@ int main() {
     bool correct = false;
 
 
-    //   /*left side*/  for(int i = 9; i<12;i++){
-    //                     gotoxy(57,i);{
-    //                     cout << "*";
-    //                      }
-    //                     }
-    //   /*right side*/  for(int i = 9; i<12;i++){
-    //                     gotoxy(92,i);{
-    //                     cout << "*";
-    //                       }
-    //                     }
-    //    /*bottom side*/ for(int i = 57; i<93;i++){
-    //                     gotoxy(i,12);{
-    //                     cout << "*";
-    //                       }
-    //                     }
-    //   /*top side*/     for(int i = 57; i<93;i++){
-    //                     gotoxy(i,8);{
-    //                     cout << "*";
-    //                       }
-    //                    }
-
-
     //This section is for Welcoming and Prompting user to input his/her name
 
-        // ASCII art as a string
+        
     welcomeScreen();
-    std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
-
+     std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                        //The first argument 2147483647 is the number of characters to ignore. In C++, 2147483647 is the maximum value that can be represented by a 32-bit signed integer.  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
     // Prompt the user to input their name
     string name;
     gotoxy(1, 23); {
         cout << "[ ENTER YOUR NAME ]: ";
         getline(cin, name);
     }
-    //  cin.ignore(); //The cin. ignore() function is used which is used to ignore or clear one or more characters from the input buffer.
 
 
   //Mechanics function call
     Mechanics(name);
-    // _getch();
+
 
 
     bool playAgain = true; // INDICATOR whether to play again or not
@@ -282,12 +252,11 @@ int main() {
                 gotoxy(62, 16);
                 cout << "Invalid input. Please try again.";
                 _getch();
-                // Sleep(2000); // Sleep for 2 seconds
 
                 cin.clear(); // Clear input buffer
-                std::cin.ignore(2147483647, '\n');
-                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
-                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+                 std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                        //The first argument 2147483647 is the number of characters to ignore. In C++, 2147483647 is the maximum value that can be represented by a 32-bit signed integer.
+               
             }
         } while (true);
 
@@ -348,6 +317,7 @@ int main() {
                 "C++ statement terminator"
             };
 
+           
             int score = 0; //score variable
 
             for (int i = 1; i <= 6; i++) {
@@ -358,7 +328,7 @@ int main() {
 
                 int errorIndex = (rand() % 13);  //random number
                 random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
-                descript = description[errorIndex];
+                descript = description[errorIndex]; //random storing descript array with index of random numbers //random storing descript array with index of random numbers //random storing descript array with index of random numbers
 
                 gotoxy(70, 6);
                 cout << "Mode: Easy" << endl;
@@ -388,9 +358,9 @@ int main() {
                 gotoxy(58, 14);
                 cout << random;
 
-                string userAnswer;
-                string correctAnswer = syntax[errorIndex];
-                string choice1;
+               string userAnswer; // variable for userAnswer;
+                string correctAnswer = syntax[errorIndex]; // variable for correctAnswer equivalent to syntax array with an index  of errorIndex
+                string choice1;  //variable for choice1 or for the yes/no choice
 
                 gotoxy(55, 17);
                 cout << "Is the syntax right? (Yes/No): ";
@@ -418,9 +388,9 @@ int main() {
                     }
                 }
                 cin.clear();   // Clear any error flags that may be set on the input
-                std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
-                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
-                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
+                 std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                        //The first argument 2147483647 is the number of characters to ignore. In C++, 2147483647 is the maximum value that can be represented by a 32-bit signed integer.  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+               
                 if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
                     if (random == correctAnswer) {
                         gotoxy(53, 20);
@@ -621,7 +591,7 @@ int main() {
 
                 int errorIndex = (rand() % 13);  //random number
                 random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
-                descript = description[errorIndex];
+                descript = description[errorIndex]; //random storing descript array with index of random numbers //random storing descript array with index of random numbers
 
                 gotoxy(70, 6);
                 cout << "Mode: Medium" << endl;
@@ -651,9 +621,9 @@ int main() {
                 gotoxy(48, 13);
                 cout << random;
 
-                string userAnswer;
-                string correctAnswer = syntax[errorIndex];
-                string choice1;
+                string userAnswer; // variable for userAnswer;
+                string correctAnswer = syntax[errorIndex]; // variable for correctAnswer equivalent to syntax array with an index  of errorIndex
+                string choice1;  //variable for choice1 or for the yes/no choice
 
                 gotoxy(55, 17);
                 cout << "Is the syntax right? (Yes/No): ";
@@ -684,10 +654,9 @@ int main() {
 
                 }
                 cin.clear();   // Clear any error flags that may be set on the input
-                std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
-                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
-                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
-
+                 std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                        //The first argument 2147483647 is the number of characters to ignore. In C++, 2147483647 is the maximum value that can be represented by a 32-bit signed integer.  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+               
                 if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
                     if (random == correctAnswer) {
                         gotoxy(53, 19);
@@ -868,7 +837,7 @@ int main() {
 
                 int errorIndex = (rand() % 6);  //random number
                 random = syntaxWithErrors[errorIndex]; //random storing syntaxWithErrors array with index of random numbers
-                descript = description[errorIndex];
+                descript = description[errorIndex]; //random storing descript array with index of random numbers //random storing descript array with index of random numbers
 
                 gotoxy(70, 6);
                 cout << "Mode: Hard" << endl;
@@ -898,9 +867,9 @@ int main() {
                 gotoxy(33, 13);
                 cout << random;
 
-                string userAnswer;
-                string correctAnswer = syntax[errorIndex];
-                string choice1;
+                string userAnswer; // variable for userAnswer;
+                string correctAnswer = syntax[errorIndex]; // variable for correctAnswer equivalent to syntax array with an index  of errorIndex
+                string choice1;  //variable for choice1 or for the yes/no choice
 
                 gotoxy(55, 16);
                 cout << "Is the syntax right? (Yes/No): ";
@@ -925,11 +894,9 @@ int main() {
                         cout << "Is the syntax right? (Yes/No): ";
                     }
                 }  cin.clear();   // Clear any error flags that may be set on the input
-                std::cin.ignore(2147483647, '\n');  // Ignor  e (discard) characters in the input buffer until a newline character ('\n') is found
-                // numeric_limits<streamsize>::max() specifies the maximum number of characters to ignore.
-                // It is set to the maximum value for the streamsize type, ensuring all characters are ignored.
-
-
+                 std::cin.ignore(2147483647, '\n');  // Ignore (discard) characters in the input buffer until a newline character ('\n') is found
+                                        //The first argument 2147483647 is the number of characters to ignore. In C++, 2147483647 is the maximum value that can be represented by a 32-bit signed integer.  // Ignor  e (discard) characters in the input buffer until a newline character ('\n') is found
+          
                 if (choice1 == "yes" || choice1 == "YES" || choice1 == "Yes") {
                     if (random == correctAnswer) {
                         gotoxy(53, 18);

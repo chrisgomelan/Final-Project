@@ -1,0 +1,13 @@
+cout<<<variable_name;
+cin<<variable;
+dataType variableName == value;
+const type name = value; // correct
+.. comment
+/ comment /
+dataType arraySize [arrayName];
+dataType arrayName [columnSize][rowSize];
+dataType arrayName [size1][size2]...[sizeN];
+dataType *identifier; 
+class_name object_name; 
+using namespace sti;
+any_statement ; 
